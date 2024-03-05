@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 import './App.css'
 import Homepage from './components/homepage'
-import Program from './components/program/program';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -13,9 +12,6 @@ function App() {
     <Routes>
       <Route path='/'
         element={<Homepage/>}
-        />
-        <Route path='programs'
-        element={<Program/>}
         />
     </Routes>
      

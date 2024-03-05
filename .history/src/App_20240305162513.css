@@ -28,13 +28,6 @@
 
 .program-container{
   position: absolute;
-  top:0;
-  left:0;
-  overflow-x: hidden;
-}
-
-.program-video{
-  background-color: red;
 }
 
 @keyframes logo-spin {

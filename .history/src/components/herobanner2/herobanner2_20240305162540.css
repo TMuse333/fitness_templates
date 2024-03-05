@@ -1,0 +1,13 @@
+.herobanner2-container{
+    background-image: url(../../media/goku-vegeta-and-broly.jpg);
+    height:100vh;
+    width:100vw;
+    position: relative;
+}
+
+.hero2-text1 {
+position: absolute;
+top:20%;
+left:50%;
+transform: translateX(-50%);
+}
