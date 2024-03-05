@@ -1,0 +1,213 @@
+
+
+
+export const designAdvantages = [
+    {
+ 
+      name: 'Designing Reuseable Components',
+      description: `I have created about reuseable components
+      during my time in react that are ready to be used at anytime.
+      In fact, everything on this website was made during other projects
+      and simply imported to make this portfolio.`,
+    },
+    {
+
+      name: 'Visually Appealing Interfaces',
+      description: `I have scoured the internet to find some of the nicest
+      websites and emulate them with my own style and combing other
+      components from multiple websites with each other
+     along with years of drawing experience to make websites that stand out among the rest.`,
+    },
+    {
+
+      name: 'Hooks',
+      description: `Through out my projects, especially my card game, I had to learn how to
+      use useState, useEffect and useContext thoroughly to ensure my applications worked properly.
+      This included keeping track of the score and time in my card game, knowing where a specific element
+      is relative to the viewport to enable an animation and 
+      knowing where the text was relative to the video
+      to enable and disable overflow to hidden on the component
+      that has the video showcasing my coding projects.`,
+    },
+    {
+
+      name: 'Customizable Components',
+      description: `Within the components I've made, some of them have alternate attributes and qualities so they can look different while still being from the same component, increasing efficiency and diversity of the page.\n
+      An example of this is this component you're viewing right now. Both the tilting feature and animation can be toggled on and off by simply putting two props to false, and this list that you are viewing right now can be any form a text you want, you can put it into the customText prop to have customizable text or a regular p tag.`,
+    },
+    {
+
+      name: 'Conditional Rendering',
+      description: `My knowledge in conditional rendering is one of the biggest
+      factors in creating these dynamic interfaces, the text you are reading right now
+      has been dynamically rendered itself. I have a great grasp
+      of how to use conditionals in return statements and on style consts
+      to rendering certain pieces based if another condition is true, like the 
+      custom text, make a container of height 0 when it is not clicked on
+      and height of 200 when clicked and much more.`,
+    },
+    {
+      name: 'CSS',
+      description: `Through out my javascript development my css has improved a lot as well,
+      throughout my projects I learned how to use grid and flex layouts to display the cards properly
+      in my card game, do responsive web, especially going from flex direction column for mobile
+      and then row for desktop, and adding hover effects.\n\n This also includes advanced selectors like .class1 .class2 for
+      precise element targeting and using the "id" tag
+      to overwrite general css when a specific element needs specific editing`,
+    },
+  ]
+
+
+  export const designAdvantages2 = [
+    {
+      name: "Lorem Ipsum ",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    },
+    {
+      name: "Lorem Ipsum ",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    },
+    {
+      name: "Lorem Ipsum ",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    },
+    {
+      name: "Lorem Ipsum ",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    },
+    {
+      name: "Lorem Ipsum Java",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    },
+    {
+      name: "Lorem Ipsum C",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    },
+  ];
+  
+
+    export const cardGameIntro = {
+      title:'The Quantum Card Game',
+      description:'This was my first full stack project where I used React js for the frontend and mongodb for the backend. '+
+      'The objective of the game is to memorize the backside of each card and match it with the image at the top of the screen, '+
+      'which changes every turn. This project was great for learning how to manage a lot of states and using mongodb.'+
+      ' Here are some of the big concepts I learned while making this project.'
+    }
+
+
+   export const cardGameDesc = [
+      {
+        name:'UseState management',
+        description:'In this card game there are many states that one cycle of play has, so I got a very thoroug'+
+         ' understanding of how to think about each state and how they relate to one another what what operations to perform based on which state, and making sure each state is updated properly'
+      },
+      {
+        name:'Using context file',
+        description:'There are different components in this game like the set'+
+        ' of cards and the scoreboard that rely on the same useState variable like if the game has started or not.'+
+        ' I had to create a context file to handle operations and logic that had to be shared throughout multiple files to ensure each file knows what is going on. '+
+        'Most of the underlying game logic is also performed throughout this file'
+      },
+      {
+        name:'Conditional Rendering',
+        description:'There are multiple components shown on the card game, like the result screen, '+
+        'instructions, the card display and the leader board. '+
+        'These components are all put on a single page but are rendered conditionally based on '+
+        'What state the game is in. The cards are also given a different color glow based if you have the selected the correct card or not'
+      },
+      {
+        name:'Backend work',
+        description:'I used mongodb for the backend of this project. '+
+        'I had to learn to use node js to connect the database and how to make '+
+        'api requests to send the data to the database and retrieve it to display on the leader board.'
+      }
+    ]
+
+
+    export const project1 =
+    {
+      subtitle:'My first full stack project',
+      title:'The Quantum Card Game',
+      description:`This is my first full stack card game which uses react js and mongodb to keep track of the leader board. This project taught me a lot about context and state management in react. Some big concepts I learned were...\n
+      How to make a context file and use a useState variable across different files\n
+      Conditional rendering to display different screens in the game like the leader board, results screen and card display\n
+      Applying useInterval and setTimeout to refresh every turn\n
+      A lot of game logic\n
+      Making a mongodb server and then using node js to make api requests to send the scores to the database and retrieve it to display it on the leader board`,
+      link:'https://quantumcardgame2.netlify.app',
+      github:'https://github.com/TMuse333/card-game-2',
+      poster:'../../media/card-game2.png'
+      
+     
+    }
+
+    export const project2 = {
+      subtitle:'My freelancing website',
+      title:'Q3 Designs',
+      description:"This is where I offer freelancing for unique and visually appealing websites. "+
+      'In this project I learned a lot about how to make unique and visually appealing interfaces '+
+      'and make reuseable components',
+      link:'https://q3designs.netlify.app',
+      github:'https://github.com/TMuse333/quantumDesigns',
+      poster:'../../media/q3-screenshot.png'
+    }
+
+   export const hydrolistIntro1 = {
+      title:'My Primary Skill',
+      description:`Currently my I am most competent in react JS, with over 550 hours since July 2023 (Approximately 4 hours of coding a day everyday). Here are some of my skills within react,
+      which include html and css knowledge as well`,
+      github:'https://github.com/TMuse333/card-game',
+      link:'https://quantumcardgame.netlify.app'
+    }
+
+    export const hydrolistIntro2 = {
+        title: 'Lorem Ipsum Secondary Skills and Personal Attributes',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore ',
+      };
+      
+
+
+    export const q3Intro = {
+      name:'Q3 Designs Freelancing',
+      description:'This is where I offer my react js services to clients, where I have made a website for a '+
+      'digital marketing company. This project was mainly focused on creating designs that standout from the rest. '+
+      'Some tactics I used to stand out were:'
+    }
+
+    export const q3Tactics = [
+      {
+        name:'Particles js and three js',
+        description:'I implemented and customized particles js to fit the them of the website with a outer space like theme along with a sphere I made in three js'
+      },
+      {
+        name:'Carousel with description',
+        description:'I used a react carousel and added a description for each image that fades in and out '+
+        'with the help of framer motion'
+      },
+      {
+        name:'tilting feature',
+        description:'To enhance interactivity on the website, I implemented a tiliting feature on some of the components so that they stay on the website longer '
+      },
+      {
+        name:'Email js implementation',
+        description:'This project taught me how to send emails through a react js project with email.js.'
+      },
+      {
+        name:'Responsive Design',
+        description:'Most of the components have two distinct versions, one where the image and text are stacked on each other for mobile devices, and one where I use display flex with flex direction: row to ensure the components look'+
+        ' well spaced out on all screens. There is also a max width property on the desktop versions to ensure the content does not get too stretched out.'
+      }
+    ]
+
+
+    export const testimonials = [
+        {
+            quote: 'Hard working, disciplined and fast',
+            effect: `Working with Q3 Designs and more specifically their CEO, Thomas Musial, was nothing short of a seamless and amazing process while having my website designed through him!\n
+            Thomas made sure to keep me in the loop for every single detail put into the website and ensured that it was exactly how I envisioned it, his ability to create original designs that make my brand stand out alongside the price he offers makes him by far the best option on the market!
+            
+            If you are on the fence about working with Thomas and Q3 Designs, take this message as your sign to pull the trigger and invest in yourself or your business!`,
+            author: '- Sainey Take',
+            title: 'CEO of Sainey Media'
+        },
+  

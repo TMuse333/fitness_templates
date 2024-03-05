@@ -1,0 +1,15 @@
+.herobanner-container{
+    width:100vw;
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+.herobanner-video{
+    height:100vh;
+    object-fit: cover;
+    width:100vw;
+    object-position: 0 75%;
+}
+
+.herobanner
