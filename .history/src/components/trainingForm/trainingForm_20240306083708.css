@@ -1,0 +1,69 @@
+.training-form-logo{
+ 
+    height:200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.training-form-herobanner h1{
+    font-size: 2rem;
+    margin: 0 auto;
+    width:max-content;
+    /* padding: 0 1rem; */
+}
+
+.training-form-herobanner h2{
+    font-size: 1.2rem;
+}
+
+.training-form-herobanner p{
+    font-size: 1rem;
+}
+
+.training-form-container{
+    position: absolute;
+    top:12%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.training-form input{
+    width:60vw;
+    height: 20px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    border-color: #00bfff;
+    border-radius: 1rem;
+}
+
+
+.training-form-container{
+    
+}
+
+.training-form-access{
+    display: none;
+}
+
+
+@media screen and (min-width:865px){
+    .training-form-container{
+        display: flex;
+    }
+
+    .training-form-access{
+        display: block;
+        width:50vw;
+    }
+
+    .form{
+        width:50vw;
+    }
+
+
+
+
+}
+
+

@@ -1,0 +1,134 @@
+.big-content-container{
+    width:100vw;
+    position: relative;
+  
+    
+}
+
+.text-container{
+   
+    position: relative;
+    z-index: 3;
+}
+
+.text-container ul{
+    text-align: left;
+    padding: 0;
+    margin-left: 1rem;
+    color:black;
+}
+
+.content-text-container{
+    margin-top: 3rem;
+    position: relative;
+
+}
+
+
+
+.image-container img{
+    width: 100vw;
+    /* position: absolute; */
+    top:100%;
+    object-fit: cover;
+}
+
+
+#big-1{
+
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+
+
+
+@media screen and (min-width:555px){
+    .image-container img{
+        position: absolute;
+        right:0;
+        top:auto;
+        width:50vw;
+        height: 50vh;
+        max-height: 500px;
+       
+      
+
+    }
+
+
+    .big-content-container{
+        margin-bottom: 0rem;
+    }
+
+
+ 
+
+    .reverse-image img{
+        position: absolute;
+        left:0%;
+        /* right: 58%; */
+     
+    }
+
+    .reverse-text{
+       
+        position: relative;
+        max-width: 400px;
+        width: 15rem;
+        margin-left: 15rem;
+       
+    }
+
+    .text-container{
+        transform: translateY(-8rem);
+    /* margin-right: auto; */
+    width: 15rem;
+    margin-left: -3rem;
+    max-width: 400px;
+    position: relative;
+
+
+
+ 
+    }
+
+    .reverse-text{
+        transform: translateY(-10rem);
+    }
+
+    .reverse-text .title-text{
+
+    }
+
+    .reverse-container{
+        flex-direction: row-reverse;
+     
+ 
+      
+    }
+
+    .content-text-container{
+
+        display: flex;
+        justify-content: space-evenly;
+     
+        margin-left: -3rem;
+
+        
+    }
+    
+}
+
+@media screen and (min-width:600px) {
+    .text-container{
+        width: 38vw;
+        margin-left: -5rem;
+       
+    }
+}
+
+
+@media screen and (min-width:865px){
+    
+}

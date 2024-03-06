@@ -1,0 +1,39 @@
+.training-form-logo{
+    width:20vw;
+    height:200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.training-form-herobanner h1{
+    font-size: 2rem;
+    width:max-content;
+    padding: 0 1rem;
+}
+
+.training-form-herobanner h2{
+    font-size: 1.2rem;
+}
+
+.training-form-herobanner p{
+    font-size: 1rem;
+}
+
+.training-form-container{
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.training-form input{
+    width:60vw;
+    height: 20px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    
+}
+
+
+
