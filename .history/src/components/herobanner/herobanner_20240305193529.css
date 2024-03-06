@@ -1,0 +1,45 @@
+.herobanner-container{
+    width:100vw;
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+.herobanner-video{
+    height:100vh;
+    object-fit: cover;
+    width:100vw;
+    object-position: 60% 75%;
+}
+
+.herobanner-text{
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+    /* color:black; */
+  padding:0.5rem 1rem;
+    background-color: grey;
+    background-color: rgba(128, 128, 128, 0.5); 
+    border-radius: 1rem;
+    /* background-color: red; */
+}
+
+.herobanner-text h1{
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+.herobanner-text p{
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+@media screen and (min-width:1200px){
+    .herobanner-video{
+        height:100vh;
+        object-fit: cover;
+        width:100vw;
+        object-position: 60% 75%;
+    }
+}

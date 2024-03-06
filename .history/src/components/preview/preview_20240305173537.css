@@ -1,0 +1,17 @@
+.program-details{
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.program-details .gallery-container{
+    width:500px;
+    
+}
+
+.program-container .image-gallery-content .image-gallery-slide .image-gallery-image{
+max-width: 315px;
+}
+
+@media screen and (min-width:1200px){
+
+}
