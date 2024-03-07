@@ -18,10 +18,10 @@
     position: absolute;
     z-index: 2;
     background-color: transparent;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0;
-    color:black;
-    top:25%;
+    color:white;
+    top:50%;
 }
 
 .carousel-button:hover{
@@ -40,9 +40,11 @@
 .products-row{
     display: flex;
     width:100vw;
+    position: relative;
+    margin: 0 auto;
     
    
-    /* position: absolute; */
+   
 }
 
 .product-carousel-container{
@@ -52,4 +54,24 @@
     height:90vw;
     max-height:800px ;
     margin-top: 10rem;
+}
+
+.image-button-container{
+    position: relative;
+}
+
+@media screen and (min-width:655px){
+    .carousel-button{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width:865px){
+.products-row{
+    max-width: 1100px;
+}
+
+.carousel-button{
+    font-size: 4rem;
+}
 }

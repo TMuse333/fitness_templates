@@ -26,7 +26,7 @@
   background: radial-gradient(circle at center, rgba(1, 181, 241, 0.7), rgba(24, 60, 84, 0.7));
 }
 
-.program-container, .personal-container, .article-container{
+.program-container, .personal-container, .articles-container{
   position: absolute;
   top:0;
   left:0;

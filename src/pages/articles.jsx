@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/navbar/navbar";
 import Article from "../components/article/article";
+import Article2 from "../components/article2/article2";
 
 const Articles = () => {
 
@@ -26,8 +27,11 @@ const Articles = () => {
 
     return (
         <>
+        <Navbar links={links}
+        />
      <div className="articles-container">
-        <Article/>
+        {/* <Article/> */}
+        <Article2/>
      </div>
         </>
     )

@@ -9,8 +9,16 @@ import vegeta from '../../media/vegeta-battle.png';
 
 const ProductCarousel = () => {
   const [currentPosition, setCurrentPosition] = useState(0);
-  const [centerIndex, setCenterIndex] = useState(0);
   const [buttonClicked, setButtonClicked] = useState(null);
+  
+
+  const [positions, setPositions] = useState(
+    Array.from({ length: 4 }, (_, index) => ({
+      left: `${(index ) * 50}%`,
+      transform: `translateX(-50%)`,
+      transition: 'transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease',
+    }))
+  );
 
   const products = [
     {
@@ -35,14 +43,6 @@ const ProductCarousel = () => {
     },
   ];
 
-  const positions = Array.from({ length: products.length }, (_, index) => {
-    return {
-      left: `${index * 50}%`,
-      transform: `translateX(-50%)`,
-      transition: 'transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease',
-    };
-  });
-
   useEffect(() => {
     // Find the index of the centered image based on the left position being '50%'
     const centeredIndex = positions.findIndex(
@@ -51,72 +51,110 @@ const ProductCarousel = () => {
   
     // Log the src of the centered image
     console.log("Centered Image Src:", products[centeredIndex].image);
-  }, [positions, products,currentPosition]);
+  }, [positions, products, currentPosition]);
+
+  const shiftPositions = (direction) => {
+    // Shift all positions circularly based on the specified direction
+    const shiftedPositions = positions.map((position, index) => {
+      const newIndex =
+        direction === 'right'
+          ? (index - 1 + positions.length) % positions.length
+          : (index + 1) % positions.length;
+      return positions[newIndex];
+    });
+
+    // Update the positions array
+    setCurrentPosition((prevPosition) =>
+      direction === 'right'
+        ? (prevPosition + 1) % positions.length
+        : prevPosition === 0
+        ? positions.length - 1
+        : prevPosition - 1
+    );
+    setButtonClicked(direction);
+    setPositions(shiftedPositions);
+  };
 
   const handlePrevClick = () => {
     setCurrentPosition((prevPosition) =>
-      prevPosition === 0 ? positions.length - 1 : prevPosition - 1
-    );
-    setButtonClicked('left');
+    prevPosition === 0 ? positions.length - 1 : prevPosition - 1
+  );
+    shiftPositions('left');
   };
 
   const handleNextClick = () => {
-    setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length);
-    setButtonClicked('right');
+    setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length)
+    shiftPositions('right');
   };
 
   const productStyles = products.map((product, index) => {
-    const isCentered = positions[(currentPosition + index) % positions.length].left === '50%';
-
+    const isCentered =
+      positions[(currentPosition + index) % positions.length].left === '50%';
+  
     return {
       left: positions[(currentPosition + index) % positions.length].left,
       transform: `${
         positions[(currentPosition + index) % positions.length].transform
       } ${isCentered ? 'scale(1.2)' : ''}`,
       filter: isCentered ? 'none' : 'brightness(55%)',
-      transition: `${positions[(currentPosition + index) % positions.length].transition}, left 0.5s ease, transform 0.5s ease`,
+      transition: `left 0.5s ease, transform 0.5s ease`,
+      opacity: !isCentered ? 0 : 1
     };
   });
 
   return (
     <div className="product-carousel-container">
       <div className="products-row">
-        <button className="carousel-button" onClick={handlePrevClick}>
-          <FiChevronLeft />
-        </button>
+      
         {products.map((product, index) => (
           <div
             key={index}
             className="product"
             style={{
-              left: productStyles[index].left,
-              transform: productStyles[index].transform,
-              filter: productStyles[index].filter,
-              transition: productStyles[index].transition,
+                left: productStyles[index].left,
+    transform: productStyles[index].transform,
+    filter: productStyles[index].filter,
+    transition:'left 0.3s ease-in, transform 0.3s ease-in'
+              
             }}
           >
+            <div className='image-button-container'>
+            <button className="carousel-button" onClick={handlePrevClick}
+            style={{
+                opacity:productStyles[index].opacity
+            }}
+            >
+          <FiChevronLeft />
+        </button>
             <img
               src={product.image}
               alt={`Product ${index + 1}`}
               key={index}
               // onMouseEnter={()=>handleMouseEnter((currentPosition + 1) % positions.length)}
-           
             />
+              <button className="carousel-button right" onClick={handleNextClick}
+                        style={{
+                            opacity:productStyles[index].opacity
+                        }}>
+          <FiChevronRight />
+        </button>
+
+            </div>
             <div
               style={{
-                opacity: positions[(currentPosition + index) % positions.length].left !== '50%' ? '0' : '1',
+                opacity:
+                  positions[(currentPosition + index) % positions.length]
+                    .left !== '50%'
+                    ? '0'
+                    : '1',
                 transition: 'opacity 0.5s ease 0.5s',
               }}
             ></div>
           </div>
         ))}
-        <button className="carousel-button right" onClick={handleNextClick}>
-          <FiChevronRight />
-        </button>
+      
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 };

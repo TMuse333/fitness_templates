@@ -65,6 +65,8 @@ const Program = () => {
 
 </div>
 
+<h1>Awesome features</h1>
+
 <ProductCarousel/>
 
 <Closer/>
