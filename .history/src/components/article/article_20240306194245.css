@@ -1,0 +1,12 @@
+.article-herobanner{
+    text-align: left;
+    position: absolute;
+    top:30%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.article-herobanner h2{
+    font-size: 2rem;
+    width: max-content;
+}

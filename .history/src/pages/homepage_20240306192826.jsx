@@ -36,8 +36,7 @@ const Homepage = () => {
             name:'Contact'
         },
         {
-            dest:'articles',
-            name:"Articles"
+            dest:''
         }
     ]
     return (

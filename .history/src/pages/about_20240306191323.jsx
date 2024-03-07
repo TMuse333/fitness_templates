@@ -34,8 +34,6 @@ const About = () => {
             image={q3}
             />
             <Content
-                        hasTilt={true}
-                        hasAnimation={true}
             image={striker}
             rev={true}
             />

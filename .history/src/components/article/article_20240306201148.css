@@ -1,0 +1,35 @@
+.article-herobanner{
+    text-align: left;
+    margin-left: 2rem;
+    /* position: absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%); */
+}
+
+.article-herobanner h2{
+    font-size: 1.75rem;
+    margin-bottom: -0.25rem;
+    /* width: max-content; */
+}
+
+.article-image{
+    width:90vw;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.article-container{
+    margin-top: 5rem;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.article-section{
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.article-container{
+    tex
+}

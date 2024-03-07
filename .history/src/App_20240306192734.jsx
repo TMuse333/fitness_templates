@@ -6,7 +6,6 @@ import Program from './pages/program';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Contact from './pages/contact';
 import About from './pages/about';
-import Articles from './pages/articles';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -26,8 +25,7 @@ function App() {
         element={<About/>}
         />
         <Route path='articles'
-        element={<Articles/>}
-        />
+        element
     </Routes>
      
     </>

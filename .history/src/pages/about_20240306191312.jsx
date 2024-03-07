@@ -30,12 +30,10 @@ const About = () => {
         <div className="personal-container">
 
             <Content
-
+            title={true}
             image={q3}
             />
             <Content
-                        hasTilt={true}
-                        hasAnimation={true}
             image={striker}
             rev={true}
             />
