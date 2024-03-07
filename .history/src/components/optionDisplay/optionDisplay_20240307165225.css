@@ -1,0 +1,52 @@
+.product img{
+    width:38vw;
+    object-fit: cover;
+    height:60vw;
+    max-height:600px ;
+   
+}
+
+.product{
+    position: absolute;
+    
+
+}
+
+.carousel-button{
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    font-size: 3rem;
+    padding: 0;
+    color:black;
+    top:25%;
+}
+
+.carousel-button:hover{
+    border:none;
+}
+
+.carousel-button:first-child {
+   left:0;
+}
+
+.carousel-button:last-child {
+    /* Styles for the last button */
+    right:0;
+}
+
+.products-row{
+    display: flex;
+    width:100vw;
+    
+   
+    /* position: absolute; */
+}
+
+.product-carousel-container{
+    margin:0 auto;
+    width:100vw;
+    position: relative;
+    height:80vw;
+    max-height:680px ;
+}
