@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import './optionDisplay.css';
 import abu6 from '../../media/aboubacar-6.jpg';
 import abu5 from '../../media/aboubacar-5-fire.png';
@@ -11,10 +11,7 @@ const ProductCarousel = () => {
 
   const [hovered, setIsHovered ] = useState(null)
 
-  useEffect(() => {
-    // Empty useEffect
-  }, []);
-  
+
 
   const handleMouseLeave = () => {
     setIsHovered(null)
@@ -61,16 +58,29 @@ const ProductCarousel = () => {
   
 
   const handlePrevClick = () => {
-    setCurrentPosition((prevPosition) =>
-      prevPosition === 0 ? positions.length - 1 : prevPosition - 1
-    );
+    setCurrentPosition((prevPosition) => {
+      const newPosition = prevPosition === 0 ? positions.length - 1 : prevPosition - 1;
+      const cardIndex = (currentPosition + positions.length - 1) % positions.length;
+      console.log(`Clicked Prev - Card: ${cardIndex}, Position: ${newPosition}`);
+      return newPosition;
+    });
+    setButtonClicked('prev');
   };
 
   const handleNextClick = () => {
-    setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length);
+    setCurrentPosition((prevPosition) => {
+      const newPosition = (prevPosition + 1) % positions.length;
+      const cardIndex = (currentPosition + 1) % positions.length;
+      console.log(`Clicked Next - Card: ${cardIndex}, Position: ${newPosition}`);
+      return newPosition;
+    });
+    setButtonClicked('next');
   };
 
- 
+  const getImageSrc = (index) => {
+    return products[(currentPosition + index) % products.length].image;
+  };
+
   
 
 
@@ -98,10 +108,9 @@ const ProductCarousel = () => {
            
           >
             <img 
-            src={product.image}
+              src={getImageSrc(index)}
              alt={`Product ${index + 1}`}
             key={index}
-            // onMouseEnter={()=>handleMouseEnter((currentPosition + 1) % positions.length)}
             
 
                 

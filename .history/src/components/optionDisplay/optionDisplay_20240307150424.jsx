@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import './optionDisplay.css';
 import abu6 from '../../media/aboubacar-6.jpg';
 import abu5 from '../../media/aboubacar-5-fire.png';
@@ -11,10 +11,9 @@ const ProductCarousel = () => {
 
   const [hovered, setIsHovered ] = useState(null)
 
-  useEffect(() => {
-    // Empty useEffect
-  }, []);
-  
+  const handleMouseEnter = (index) => {
+    setIsHovered(index)
+  }
 
   const handleMouseLeave = () => {
     setIsHovered(null)
@@ -54,25 +53,34 @@ const ProductCarousel = () => {
       transition: 'transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease',
     };
   });
-
-  const handleMouseEnter = (index) => {
-    setIsHovered((index) )
-  }
   
 
   const handlePrevClick = () => {
     setCurrentPosition((prevPosition) =>
       prevPosition === 0 ? positions.length - 1 : prevPosition - 1
     );
+    setButtonClicked('left');
   };
 
   const handleNextClick = () => {
     setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length);
+    setButtonClicked('right');
   };
 
- 
-  
+  const handleTransitionEnd = () => {
+    setButtonClicked(null);
+  };
 
+  const style = (index) => {
+    const selected = index === hovered;
+  
+    return {
+      transform: selected ? 'scale(1.1)' : 'scale(1)',
+      border: selected ? '3px solid black' : 'none',
+      boxShadow: selected ? '0 0 10px gold' : 'none',
+      transition: 'transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease',
+    };
+  };
 
   return (
     <div className="product-carousel-container">
@@ -94,19 +102,11 @@ const ProductCarousel = () => {
                 boxShadow: positions[(currentPosition + index) % positions.length].boxShadow,
                 transition: positions[(currentPosition + index) % positions.length].transition + ', left 0.5s ease, transform 0.5s ease',
               }}
-           
-           
+            onTransitionEnd={handleTransitionEnd}
+            onMouseEnter={()=>handleMouseEnter(index)}
+            onMouseLeave={()=>handleMouseLeave()}
           >
-            <img 
-            src={product.image}
-             alt={`Product ${index + 1}`}
-            key={index}
-            // onMouseEnter={()=>handleMouseEnter((currentPosition + 1) % positions.length)}
-            
-
-                
-
-            onMouseLeave={()=>handleMouseLeave()} />
+            <img src={product.image} alt={`Product ${index + 1}`} />
             <div
               style={{
                 opacity: positions[(currentPosition + index) % positions.length].left !== '50%' ? '0' : '1',

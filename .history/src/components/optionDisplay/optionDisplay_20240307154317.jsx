@@ -61,13 +61,23 @@ const ProductCarousel = () => {
   
 
   const handlePrevClick = () => {
-    setCurrentPosition((prevPosition) =>
-      prevPosition === 0 ? positions.length - 1 : prevPosition - 1
-    );
+    setCurrentPosition((prevPosition) => {
+      const newPosition = prevPosition === 0 ? positions.length - 1 : prevPosition - 1;
+      const cardIndex = (currentPosition + positions.length - 1) % positions.length;
+      console.log(`Clicked Prev - Card: ${cardIndex}, Position: ${newPosition}`);
+      return newPosition;
+    });
+    setButtonClicked('prev');
   };
 
   const handleNextClick = () => {
-    setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length);
+    setCurrentPosition((prevPosition) => {
+      const newPosition = (prevPosition + 1) % positions.length;
+      const cardIndex = (currentPosition + 1) % positions.length;
+      console.log(`Clicked Next - Card: ${cardIndex}, Position: ${newPosition}`);
+      return newPosition;
+    });
+    setButtonClicked('next');
   };
 
  

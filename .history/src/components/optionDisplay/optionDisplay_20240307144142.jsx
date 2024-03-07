@@ -1,24 +1,12 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import './optionDisplay.css';
 import abu6 from '../../media/aboubacar-6.jpg';
 import abu5 from '../../media/aboubacar-5-fire.png';
 import striker from '../../media/quantum-striker-pose.png';
-import vegeta from '../../media/vegeta-battle.png';
+import vegeta from '../../media/vegeta-battle.png'
 
 const ProductCarousel = () => {
   const [currentPosition, setCurrentPosition] = useState(0);
-  const [buttonClicked, setButtonClicked] = useState(null);
-
-  const [hovered, setIsHovered ] = useState(null)
-
-  useEffect(() => {
-    // Empty useEffect
-  }, []);
-  
-
-  const handleMouseLeave = () => {
-    setIsHovered(null)
-  }
 
   const products = [
     {
@@ -37,28 +25,16 @@ const ProductCarousel = () => {
       description: 'Flexing at glenbourne',
     },
     {
-      image: vegeta,
-      name: 'Vegeta',
-      description: 'Be a proud warrior like Vegeta',
-    },
+        image:vegeta,
+        name:'Vegeta',
+        description:'Be a proud warrior like Vegeta'
+    }
   ];
 
-  const positions = Array.from({ length: products.length }, (_, index) => {
-    const selected = index === hovered;
-  
-    return {
-      left: `${index * 50}%`,
-      transform: `translateX(-50%) ${selected ? 'scale(1.1)' : 'scale(1)'}`,
-      border: selected ? '3px solid black' : 'none',
-      boxShadow: selected ? '0 0 10px gold' : 'none',
-      transition: 'transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease',
-    };
-  });
-
-  const handleMouseEnter = (index) => {
-    setIsHovered((index) )
-  }
-  
+  const positions = Array.from({ length: products.length }, (_, index) => ({
+    left: `${index * 50}%`,
+    transform: 'translateX(-50%)',
+  }));
 
   const handlePrevClick = () => {
     setCurrentPosition((prevPosition) =>
@@ -70,9 +46,11 @@ const ProductCarousel = () => {
     setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length);
   };
 
- 
-  
+  const [hovered, setIsHovered] = useState(null)
 
+  const handleMouseEnter = (index) => {
+    setIsHovered(index)
+  }
 
   return (
     <div className="product-carousel-container">
@@ -85,36 +63,32 @@ const ProductCarousel = () => {
       <div className="products-row">
         {products.map((product, index) => (
           <div
+          onMouseEnter={()=>handleMouseEnter(index)}
             key={index}
             className="product"
             style={{
                 left: positions[(currentPosition + index) % positions.length].left,
                 transform: positions[(currentPosition + index) % positions.length].transform,
-                border: positions[(currentPosition + index) % positions.length].border,
-                boxShadow: positions[(currentPosition + index) % positions.length].boxShadow,
-                transition: positions[(currentPosition + index) % positions.length].transition + ', left 0.5s ease, transform 0.5s ease',
+                transition:
+                //  positions[(currentPosition + index) % positions.length].left !== '0%' && positions[(currentPosition + index) % positions.length].left !== `${(positions.length - 1) * 50}%` ?
+                  'left 0.5s ease, transform 0.5s ease' 
+                //   : 'none',
               }}
-           
-           
+              
           >
-            <img 
-            src={product.image}
-             alt={`Product ${index + 1}`}
-            key={index}
-            // onMouseEnter={()=>handleMouseEnter((currentPosition + 1) % positions.length)}
-            
-
-                
-
-            onMouseLeave={()=>handleMouseLeave()} />
+            <img src={product.image} alt={`Product ${index + 1}`} />
             <div
-              style={{
+            style={{
                 opacity: positions[(currentPosition + index) % positions.length].left !== '50%' ? '0' : '1',
                 transition: 'opacity 0.5s ease 0.5s',
-              }}
+                // backgroundColor:'black'
+            }}
             >
              
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
             </div>
+
           </div>
         ))}
       </div>

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import './optionDisplay.css';
 import abu6 from '../../media/aboubacar-6.jpg';
 import abu5 from '../../media/aboubacar-5-fire.png';
@@ -11,10 +11,7 @@ const ProductCarousel = () => {
 
   const [hovered, setIsHovered ] = useState(null)
 
-  useEffect(() => {
-    // Empty useEffect
-  }, []);
-  
+
 
   const handleMouseLeave = () => {
     setIsHovered(null)
@@ -64,15 +61,24 @@ const ProductCarousel = () => {
     setCurrentPosition((prevPosition) =>
       prevPosition === 0 ? positions.length - 1 : prevPosition - 1
     );
+    setButtonClicked(true);
   };
 
   const handleNextClick = () => {
     setCurrentPosition((prevPosition) => (prevPosition + 1) % positions.length);
+    setButtonClicked(true);
   };
 
- 
   
 
+  const handleMouseClick = (index) => {
+    if (index === 0) {
+        // handleNextClick();
+    } else if (index === 2) {
+     
+    //   handlePrevClick();
+    }
+  };
 
   return (
     <div className="product-carousel-container">
@@ -97,14 +103,10 @@ const ProductCarousel = () => {
            
            
           >
-            <img 
-            src={product.image}
-             alt={`Product ${index + 1}`}
+            <img src={product.image} alt={`Product ${index + 1}`}
             key={index}
-            // onMouseEnter={()=>handleMouseEnter((currentPosition + 1) % positions.length)}
-            
-
-                
+            onClick={()=>handleMouseClick(index)}
+            onMouseEnter={() => handleMouseEnter(!buttonClicked ? index : 0)}
 
             onMouseLeave={()=>handleMouseLeave()} />
             <div
