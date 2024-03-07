@@ -1,0 +1,21 @@
+.product img{
+    width:50vw;
+    object-fit: cover;
+    height:300px;
+   
+}
+
+.product{
+    position: absolute;
+}
+
+.products-row{
+    display: flex;
+    /* position: absolute; */
+}
+
+.product-carousel-container{
+    margin:0 auto;
+    width:100vw;
+    position: relative;
+}

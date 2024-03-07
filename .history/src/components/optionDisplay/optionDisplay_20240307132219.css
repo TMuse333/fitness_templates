@@ -1,0 +1,19 @@
+.product img{
+    width:70vw;
+    object-fit: cover;
+    height:300px;
+   
+}
+
+.product{
+    pso
+}
+
+.products-row{
+    display: flex;
+}
+
+.product-carousel-container{
+    margin:0 auto;
+    width:100vw;
+}

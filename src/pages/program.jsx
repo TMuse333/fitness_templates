@@ -10,6 +10,7 @@ import Footer2 from "../components/footer2/footer2";
 import Navbar from "../components/navbar/navbar";
 import Closer from "../components/closer/closer";
 import { Helmet } from "react-helmet";
+import ProductCarousel from "../components/optionDisplay/optionDisplay";
 
 const Program = () => {
 
@@ -59,6 +60,8 @@ const Program = () => {
       />
 
 </div>
+
+<ProductCarousel/>
 
 <Closer/>
 
