@@ -45,39 +45,21 @@ const About = () => {
   <meta property="og:description" content="Description for social media sharing" />
   <meta property="og:image" content="/path/to/og-image.jpg" />
   <script type="application/ld+json">
-    {
-`{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Muhammad Bensalim",
-  "description": "Dedicated personal trainer in powerlifting and fitness.",
-  "image": "/path/to/muhammad-bensalim-image.jpg",
-
-  "gender": "Male",  // Adjust as needed
-  "affiliation": {
-    "@type": "St Anne",
-    "name": "Gregory's gym"
-  },
-  "hasOccupation": "Personal Trainer",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "123 Main St",
-    "addressLocality": "City",
-    "addressRegion": "State",
-    "postalCode": "12345",
-    "addressCountry": "Country"
-  },
-  "email": "muhammad@example.com",
-  "telephone": "+123456789",
-  "sameAs": [
-    "https://www.facebook.com/muhammad.bensalim",
-    "https://www.instagram.com/muhammad_bensalim"
-  ]
-}`
-}
-</script>
-
-
+      {`
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Your Organization",
+          "url": "https://www.yourwebsite.com",
+          "logo": "https://www.yourwebsite.com/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-555-5555",
+            "contactType": "customer support"
+          }
+        }
+      `}
+    </script>
                 </Helmet>
                 </HelmetProvider>
         

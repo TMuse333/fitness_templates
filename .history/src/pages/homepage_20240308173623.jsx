@@ -80,11 +80,11 @@ const Homepage = () => {
       "telephone": "+1-555-555-5555",
       "email": "contact@muhammadbensalim.com",
       "address": {
-       
-        "addressLocality": "Halifax",
-        "addressRegion": "Nova Scotia",
-       
-        "addressCountry": "Canada"
+        "@type": "PostalAddress",
+        "addressLocality": "Your City",
+        "addressRegion": "Your Province/State",
+        "postalCode": "Your Postal Code",
+        "addressCountry": "Your Country"
       }
     }
   `}

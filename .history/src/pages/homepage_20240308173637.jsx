@@ -81,8 +81,8 @@ const Homepage = () => {
       "email": "contact@muhammadbensalim.com",
       "address": {
        
-        "addressLocality": "Halifax",
-        "addressRegion": "Nova Scotia",
+        "addressLocality": "Your City",
+        "addressRegion": "Your Province/State",
        
         "addressCountry": "Canada"
       }

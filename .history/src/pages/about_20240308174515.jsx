@@ -45,18 +45,18 @@ const About = () => {
   <meta property="og:description" content="Description for social media sharing" />
   <meta property="og:image" content="/path/to/og-image.jpg" />
   <script type="application/ld+json">
-    {
-`{
+{
   "@context": "http://schema.org",
   "@type": "Person",
   "name": "Muhammad Bensalim",
   "description": "Dedicated personal trainer in powerlifting and fitness.",
   "image": "/path/to/muhammad-bensalim-image.jpg",
-
+  "birthDate": "YYYY-MM-DD",
+  "birthPlace": "City, Country",
   "gender": "Male",  // Adjust as needed
   "affiliation": {
-    "@type": "St Anne",
-    "name": "Gregory's gym"
+    "@type": "Organization",
+    "name": "Your Gym Name"
   },
   "hasOccupation": "Personal Trainer",
   "address": {
@@ -73,7 +73,6 @@ const About = () => {
     "https://www.facebook.com/muhammad.bensalim",
     "https://www.instagram.com/muhammad_bensalim"
   ]
-}`
 }
 </script>
 

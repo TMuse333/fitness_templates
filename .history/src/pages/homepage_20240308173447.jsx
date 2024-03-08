@@ -61,35 +61,6 @@ const Homepage = () => {
                     <meta property="og:title" content="Your Open Graph Title" />
                     <meta property="og:description" content="Description for social media sharing" />
                     <meta property="og:image" content="/path/to/og-image.jpg" />
-
-                    <script type="application/ld+json">
-  {`
-    {
-      "@context": "http://schema.org",
-      "@type": "Person",
-      "name": "Muhammad Bensalim",
-      "url": "https://www.yourwebsite.com",
-      "sameAs": [
-        "https://www.facebook.com/MuhammadBensalim",
-        "https://www.instagram.com/MuhammadBensalim",
-        // Add other social media profiles
-      ],
-      "jobTitle": "Elite Powerlifter and Online Trainer",
-      "description": "Muhammad Bensalim is an elite powerlifter from Nova Scotia, offering online training services.",
-      "image": "https://www.yourwebsite.com/path/to/muhammad-bensalim.jpg",
-      "telephone": "+1-555-555-5555",
-      "email": "contact@muhammadbensalim.com",
-      "address": {
-       
-        "addressLocality": "Halifax",
-        "addressRegion": "Nova Scotia",
-       
-        "addressCountry": "Canada"
-      }
-    }
-  `}
-</script>
-
                     
                 </Helmet>
             </HelmetProvider>

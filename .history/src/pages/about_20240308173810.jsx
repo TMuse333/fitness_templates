@@ -45,39 +45,32 @@ const About = () => {
   <meta property="og:description" content="Description for social media sharing" />
   <meta property="og:image" content="/path/to/og-image.jpg" />
   <script type="application/ld+json">
+  {`
     {
-`{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Muhammad Bensalim",
-  "description": "Dedicated personal trainer in powerlifting and fitness.",
-  "image": "/path/to/muhammad-bensalim-image.jpg",
-
-  "gender": "Male",  // Adjust as needed
-  "affiliation": {
-    "@type": "St Anne",
-    "name": "Gregory's gym"
-  },
-  "hasOccupation": "Personal Trainer",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "123 Main St",
-    "addressLocality": "City",
-    "addressRegion": "State",
-    "postalCode": "12345",
-    "addressCountry": "Country"
-  },
-  "email": "muhammad@example.com",
-  "telephone": "+123456789",
-  "sameAs": [
-    "https://www.facebook.com/muhammad.bensalim",
-    "https://www.instagram.com/muhammad_bensalim"
-  ]
-}`
-}
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Bensalim",
+      "url": "https://www.yourwebsite.com",
+      "sameAs": [
+        "https://www.facebook.com/MuhammadBensalim",
+        "https://www.instagram.com/MuhammadBensalim",
+        // Add other social media profiles
+      ],
+      "jobTitle": "Elite Powerlifter and Online Trainer",
+      "description": "Muhammad Bensalim is an elite powerlifter from Nova Scotia, offering online training services.",
+      "image": "https://www.yourwebsite.com/path/to/muhammad-bensalim.jpg",
+      "telephone": "+1-555-555-5555",
+      "email": "contact@muhammadbensalim.com",
+      "address": {
+       
+        "addressLocality": "Halifax",
+        "addressRegion": "Nova Scotia",
+       
+        "addressCountry": "Canada"
+      }
+    }
+  `}
 </script>
-
-
                 </Helmet>
                 </HelmetProvider>
         

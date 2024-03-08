@@ -82,7 +82,7 @@ const Homepage = () => {
       "address": {
        
         "addressLocality": "Halifax",
-        "addressRegion": "Nova Scotia",
+        "addressRegion": "Your Province/State",
        
         "addressCountry": "Canada"
       }

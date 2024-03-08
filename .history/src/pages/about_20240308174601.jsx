@@ -52,11 +52,12 @@ const About = () => {
   "name": "Muhammad Bensalim",
   "description": "Dedicated personal trainer in powerlifting and fitness.",
   "image": "/path/to/muhammad-bensalim-image.jpg",
-
+  "birthDate": "YYYY-MM-DD",
+  "birthPlace": "City, Country",
   "gender": "Male",  // Adjust as needed
   "affiliation": {
-    "@type": "St Anne",
-    "name": "Gregory's gym"
+    "@type": "Organization",
+    "name": "Your Gym Name"
   },
   "hasOccupation": "Personal Trainer",
   "address": {

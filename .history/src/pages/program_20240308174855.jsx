@@ -43,7 +43,7 @@ const Program = () => {
 
 <script type="application/ld+json">
     {
-      `{
+      {
         "@context": "http://schema.org",
         "@type": "WebPage",
         "name": "Muhammad Bensalim Training Programs",
@@ -64,7 +64,6 @@ const Program = () => {
             "height": 60
           }
         }
-    }`
       }
     </script>
               

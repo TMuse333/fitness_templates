@@ -41,32 +41,7 @@ const Program = () => {
                 it describes his philosophies can methods for acheive the best fitness results possible. It also answers common
                 training questions like what equipment and mentality is needed ect." />
 
-<script type="application/ld+json">
-    {
-      `{
-        "@context": "http://schema.org",
-        "@type": "WebPage",
-        "name": "Muhammad Bensalim Training Programs",
-        "description": "Explore Muhammad Bensalim's powerlifting training programs. Learn about his philosophies, methods, and achieve the best fitness results. Find answers to common questions about equipment and mentality.",
-        "url": "https://www.yourwebsite.com/muhammad-bensalim-training-programs",
-        "mainEntityOfPage": {
-          "@type": "CreativeWork",
-          "name": "Muhammad Bensalim Training Programs",
-          "description": "Powerlifting training programs designed by Muhammad Bensalim for optimal fitness results."
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Muhammad Bensalim Training",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.yourwebsite.com/logo.png",
-            "width": 600,
-            "height": 60
-          }
-        }
-    }`
-      }
-    </script>
+                
               
             </Helmet>
             </HelmetProvider>

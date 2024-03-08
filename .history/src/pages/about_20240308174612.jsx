@@ -55,8 +55,8 @@ const About = () => {
 
   "gender": "Male",  // Adjust as needed
   "affiliation": {
-    "@type": "St Anne",
-    "name": "Gregory's gym"
+    "@type": "Organization",
+    "name": "Your Gym Name"
   },
   "hasOccupation": "Personal Trainer",
   "address": {
