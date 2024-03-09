@@ -1,0 +1,7 @@
+[build]
+  functions = "netlify"
+
+  [[plugins]]
+  package = "./netlify"
+  include = ['https://muhammadbensalim.com/', 'https://muhammadbensalim.com/programs', 'https://muhammadbensalim.com/about',
+'https://muhammadbensalim.com/contact','https://muhammadbensalim.com/articles'];

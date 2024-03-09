@@ -26,7 +26,7 @@ const ProductCarousel = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: [0.2, 0], // Adjust the threshold as needed
+    threshold: [0.4, 0], // Adjust the threshold as needed
   });
 
   const controls = useAnimation();

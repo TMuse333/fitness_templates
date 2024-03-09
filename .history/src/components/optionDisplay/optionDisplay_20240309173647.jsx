@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useMemo } from 'react';
+import React, { useState, useEffect,useNen } from 'react';
 import './optionDisplay.css';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { motion, useAnimation } from 'framer-motion';
@@ -26,7 +26,7 @@ const ProductCarousel = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: [0.2, 0], // Adjust the threshold as needed
+    threshold: [0.4, 0], // Adjust the threshold as needed
   });
 
   const controls = useAnimation();
