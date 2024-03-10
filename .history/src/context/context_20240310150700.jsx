@@ -18,7 +18,8 @@ export const WorkoutProvider = ({ children }) => {
 
     const handleProgressSelection = () => {
         setWeeklyProgressSelected(true)
-    
+        setWeekSelected(false)
+        setDateSelected(false)
         calculateProgress()
     }
   

@@ -6,23 +6,70 @@ import './tracker.css';
 import { useWorkout } from "../../context/context";
 
 const Tracker = () => {
+//   const [selectedDate, setSelectedDate] = useState(null);
+//   const [workouts, setWorkouts] = useState([]);
+//   const [selectedWeek, setSelectedWeek] = useState(null);
 
-    const {
-       filteredWorkouts,
-       handleDateSelection,
-       handleWeekSelection,
-        handleDateChange,
-        selectedDate,
-        handleProgressSelection,
-        weeklyProgressSelected
-    } = useWorkout()
+
+
+  const {
+    workouts,
+    setWorkouts,
+    selectedDate,
+    selectedWeek,
+    handleDateChange,
+    handleWeekSelection,
+  } = useWorkout();
+
+  useEffect(() => {
+    // Fetch your workout data here
+    // For now, using the provided workoutData as an example
+    setWorkouts(workoutData);
+  }, []);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    
+  };
+
+  const handleWeekSelection = () => {
+    setWeekSelected(true);
+    setDateSelected(false);
+    setSelectedWeek(getWeekNumber(selectedDate));
+  };
+
+  const handleDateSelection = () => {
+    setDateSelected(true);
+    setWeekSelected(false);
+  };
+
+  const getWeekNumber = (date) => {
+    // Calculate the ISO week number
+    const currentDate = new Date(date);
+    currentDate.setHours(0, 0, 0, 0);
+    currentDate.setDate(currentDate.getDate() + 4 - (currentDate.getDay() || 7));
+    const yearStart = new Date(currentDate.getFullYear(), 0, 1);
+    const weekNumber = Math.ceil(((currentDate - yearStart) / 86400000 + 1) / 7);
+
+    return weekNumber;
+  };
+
+  // Filter workouts based on the selected date or week
+  const filteredWorkouts = workouts.filter((workout) => {
+    if (dateSelected) {
+      return workout.date && workout.date.toDateString() === selectedDate?.toDateString();
+    } else if (weekSelected) {
+      return getWeekNumber(workout.date) === selectedWeek;
+    }
+    return false;
+  });
+
   return (
     <div className="tracker-container">
       <p>Select a date or week</p>
       <div className="tracker-buttons">
         <button onClick={handleDateSelection}>Date</button>
         <button onClick={handleWeekSelection}>Week</button>
-        <button onClick={handleProgressSelection}> Progress </button>
       </div>
 
       <form className="tracker-form">

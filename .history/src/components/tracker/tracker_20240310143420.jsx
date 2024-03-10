@@ -12,9 +12,7 @@ const Tracker = () => {
        handleDateSelection,
        handleWeekSelection,
         handleDateChange,
-        selectedDate,
-        handleProgressSelection,
-        weeklyProgressSelected
+        selectedDate
     } = useWorkout()
   return (
     <div className="tracker-container">
@@ -22,7 +20,6 @@ const Tracker = () => {
       <div className="tracker-buttons">
         <button onClick={handleDateSelection}>Date</button>
         <button onClick={handleWeekSelection}>Week</button>
-        <button onClick={handleProgressSelection}> Progress </button>
       </div>
 
       <form className="tracker-form">

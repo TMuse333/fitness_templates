@@ -12,17 +12,8 @@ export const WorkoutProvider = ({ children }) => {
   
     const [weekSelected, setWeekSelected] = useState(false);
     const [dateSelected, setDateSelected] = useState(false);
-
-    const [weeklyProgressSelected, setWeeklyProgressSelected] =
-    useState(false)
-
-    const handleProgressSelection = () => {
-        setWeeklyProgressSelected(true)
-    
-        calculateProgress()
-    }
   
-    const exerciseMap = new Map();
+  
   
     useEffect(() => {
       // Fetch your workout data here
@@ -67,60 +58,12 @@ export const WorkoutProvider = ({ children }) => {
       return false;
     });
 
-
-    const calculateProgress = () => {
-       
-          // Iterate through workouts in the selected week
-          filteredWorkouts.forEach((workout) => {
-            workout.exercises.forEach((exercise) => {
-              const { name, sets } = exercise;
-    
-              // Initialize an array for the exercise if not present
-              if (!exerciseMap.has(name)) {
-                exerciseMap.set(name, []);
-              }
-    
-              // Add sets data to the array
-              exerciseMap.get(name).push({ date: workout.date, sets });
-            });
-          });
-    
-          // Calculate progress for each exercise
-          const progressData = [];
-    
-          exerciseMap.forEach((exerciseData, exerciseName) => {
-            for (let i = 1; i < exerciseData.length; i++) {
-              const currentSets = exerciseData[i].sets;
-              const previousSets = exerciseData[i - 1].sets;
-    
-              // Assume sets have the same order in both workouts
-              const progressSets = currentSets.map((currentSet, index) => ({
-                weightDiff: currentSet.weight - previousSets[index].weight,
-                repsDiff: currentSet.reps - previousSets[index].reps,
-              }));
-    
-              progressData.push({ name: exerciseName, progressSets });
-            }
-          });
-    
-          console.log('Progress Data:', progressData);
-    
-          return progressData;
-        
-    
-        return [];
-      };
-
-
-
     const value = {
         filteredWorkouts,
         handleWeekSelection,
         handleDateSelection,
         handleDateChange,
-        selectedDate,
-        handleProgressSelection,
-        weeklyProgressSelected
+        selectedDate
     }
   
 

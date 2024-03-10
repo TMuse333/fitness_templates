@@ -18,7 +18,8 @@ export const WorkoutProvider = ({ children }) => {
 
     const handleProgressSelection = () => {
         setWeeklyProgressSelected(true)
-    
+        setWeekSelected(false)
+        setDateSelected(false)
         calculateProgress()
     }
   
@@ -69,7 +70,7 @@ export const WorkoutProvider = ({ children }) => {
 
 
     const calculateProgress = () => {
-       
+        if (weekSelected) {
           // Iterate through workouts in the selected week
           filteredWorkouts.forEach((workout) => {
             workout.exercises.forEach((exercise) => {
@@ -106,7 +107,7 @@ export const WorkoutProvider = ({ children }) => {
           console.log('Progress Data:', progressData);
     
           return progressData;
-        
+        }
     
         return [];
       };

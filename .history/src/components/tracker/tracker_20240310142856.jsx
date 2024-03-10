@@ -7,22 +7,16 @@ import { useWorkout } from "../../context/context";
 
 const Tracker = () => {
 
-    const {
-       filteredWorkouts,
-       handleDateSelection,
-       handleWeekSelection,
-        handleDateChange,
-        selectedDate,
-        handleProgressSelection,
-        weeklyProgressSelected
-    } = useWorkout()
+
+  // Filter workouts based on the selected date or week
+
+
   return (
     <div className="tracker-container">
       <p>Select a date or week</p>
       <div className="tracker-buttons">
         <button onClick={handleDateSelection}>Date</button>
         <button onClick={handleWeekSelection}>Week</button>
-        <button onClick={handleProgressSelection}> Progress </button>
       </div>
 
       <form className="tracker-form">

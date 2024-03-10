@@ -18,8 +18,8 @@ export const WorkoutProvider = ({ children }) => {
 
     const handleProgressSelection = () => {
         setWeeklyProgressSelected(true)
-    
-        calculateProgress()
+        setWeekSelected(false)
+        setDateSelected(false)
     }
   
     const exerciseMap = new Map();
@@ -69,7 +69,7 @@ export const WorkoutProvider = ({ children }) => {
 
 
     const calculateProgress = () => {
-       
+        if (weekSelected) {
           // Iterate through workouts in the selected week
           filteredWorkouts.forEach((workout) => {
             workout.exercises.forEach((exercise) => {
@@ -106,7 +106,7 @@ export const WorkoutProvider = ({ children }) => {
           console.log('Progress Data:', progressData);
     
           return progressData;
-        
+        }
     
         return [];
       };
@@ -119,8 +119,6 @@ export const WorkoutProvider = ({ children }) => {
         handleDateSelection,
         handleDateChange,
         selectedDate,
-        handleProgressSelection,
-        weeklyProgressSelected
     }
   
 
