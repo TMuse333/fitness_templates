@@ -1,0 +1,24 @@
+.login-box{
+    background-color: #00bfff;
+    padding:2rem;
+    width:90vw;
+    margin:0 auto;
+}
+
+.login-box input{
+    padding:1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+ 
+}
+
+.login-box input::placeholder {
+    /* Style the placeholder text here */
+    color: white;
+    opacity: 0.8; /* You can adjust the opacity if needed */
+  }
+
+.login-contanier{
+    width:100vw;
+}

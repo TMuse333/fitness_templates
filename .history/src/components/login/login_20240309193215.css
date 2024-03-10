@@ -1,0 +1,17 @@
+.login-box{
+    background-color: #00bfff;
+    padding:2rem;
+    width:90vw;
+    margin:0 auto;
+}
+
+.login-box input{
+    padding:1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    bord
+}
+
+.login-contanier{
+    width:100vw;
+}

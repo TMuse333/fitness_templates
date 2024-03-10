@@ -1,0 +1,33 @@
+.workout-boxes{
+    margin: 0 auto;
+}
+
+.tracker-container{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.exercise-box{
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.exercise-date{
+margin: 1rem auto;
+}
+
+.tracker-buttons button {
+    font-size: 0.75rem;
+    
+}
+
+
+.date-picker{
+    font-size: 1rem;
+    padding:0.5rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+}

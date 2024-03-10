@@ -1,0 +1,20 @@
+.workout-boxes{
+    margin: 0 auto;
+}
+
+.tracker-container{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.exercise-box{
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.exercise-date{
+    margin: 1 auto;
+}
