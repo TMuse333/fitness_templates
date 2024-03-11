@@ -73,6 +73,9 @@ export const WorkoutProvider = ({ children }) => {
           // Iterate through workouts in the selected week
           const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date - b.date);
       
+          // Set to keep track of unique exercise names
+          const uniqueExerciseNames = new Set();
+      
           // Calculate progress for each exercise
           const progressData = [];
       
@@ -80,38 +83,26 @@ export const WorkoutProvider = ({ children }) => {
             workout.exercises.forEach((exercise) => {
               const { name } = exercise;
       
-              // Check if the exercise already exists in progressData
-              const existingExercise = progressData.find((item) => item.name === name);
-      
-              if (existingExercise) {
-                // If the exercise exists, add the current workout data to it
-                existingExercise.workouts.push({
-                  date: workout.date,
-                  sets: exercise.sets,
-                });
-              } else {
-                // If the exercise doesn't exist, create a new entry in progressData
-                progressData.push({
-                  name,
-                  workouts: [
-                    {
-                      date: workout.date,
-                      sets: exercise.sets,
-                    },
-                  ],
-                });
+              // Check if the exercise name is already in the set
+              if (!uniqueExerciseNames.has(name)) {
+                // If not, add it to the set and progressData array
+                uniqueExerciseNames.add(name);
+                progressData.push({ name, workouts: [] });
               }
+      
+              // Find the index of the exercise in progressData
+              const exerciseIndex = progressData.findIndex((item) => item.name === name);
+      
+              // Add the workout data to the corresponding exercise in progressData
+              progressData[exerciseIndex].workouts.push({
+                date: workout.date,
+                sets: exercise.sets,
+              });
             });
           });
-      
-          // Log the workout data for each exercise
-          progressData.forEach((exercise) => {
-            console.log(`Exercise Name: ${exercise.name}`);
-      
-            for (let i = 0; i < exercise.workouts.length; i++) {
-              console.log(`Workout ${i + 1}:`, exercise.workouts[i]);
-            }
-          });
+
+          progressData.forEach
+          
       
           console.log('Progress Data:', progressData);
       
@@ -120,7 +111,6 @@ export const WorkoutProvider = ({ children }) => {
       
         return [];
       };
-      
       
       
       

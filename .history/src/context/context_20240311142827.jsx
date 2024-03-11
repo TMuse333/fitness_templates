@@ -73,55 +73,48 @@ export const WorkoutProvider = ({ children }) => {
           // Iterate through workouts in the selected week
           const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date - b.date);
       
-          // Calculate progress for each exercise
-          const progressData = [];
-      
-          sortedWorkouts.forEach((workout) => {
+          sortedWorkouts.forEach((workout, workoutIndex) => {
             workout.exercises.forEach((exercise) => {
-              const { name } = exercise;
+              const { name, sets } = exercise;
       
-              // Check if the exercise already exists in progressData
-              const existingExercise = progressData.find((item) => item.name === name);
-      
-              if (existingExercise) {
-                // If the exercise exists, add the current workout data to it
-                existingExercise.workouts.push({
-                  date: workout.date,
-                  sets: exercise.sets,
-                });
-              } else {
-                // If the exercise doesn't exist, create a new entry in progressData
-                progressData.push({
-                  name,
-                  workouts: [
-                    {
-                      date: workout.date,
-                      sets: exercise.sets,
-                    },
-                  ],
-                });
+              // Initialize an array for the exercise if not present
+              if (!exerciseMap.has(name)) {
+                exerciseMap.set(name, []);
               }
+      
+              // Add sets data to the array
+              exerciseMap.get(name).push({ date: workout.date, sets });
             });
           });
       
-          // Log the workout data for each exercise
-          progressData.forEach((exercise) => {
-            console.log(`Exercise Name: ${exercise.name}`);
+          // Calculate progress for each exercise
+          const progressData = [];
       
-            for (let i = 0; i < exercise.workouts.length; i++) {
-              console.log(`Workout ${i + 1}:`, exercise.workouts[i]);
+          exerciseMap.forEach((exerciseData, exerciseName) => {
+            for (let i = 1; i < exerciseData.length; i++) {
+              const currentSets = exerciseData[i].sets;
+              const previousSets = exerciseData[i - 1].sets;
+      
+              // Assume sets have the same order in both workouts
+              const progressSets = currentSets.map((currentSet, index) => ({
+                weightDiff: currentSet.weight - previousSets[index].weight,
+                repsDiff: currentSet.reps - previousSets[index].reps,
+              }));
+      
+              progressData.push({ name: exerciseName, progressSets });
+      
+              // Log progress for each particular exercise name
+            //   console.log(`Progress for ${exerciseName} from workout ${i + 1} to workout ${i+2}:`, progressSets);
             }
           });
       
-          console.log('Progress Data:', progressData);
+          console.log('Overall Progress Data:', progressData);
       
           return progressData;
         }
       
         return [];
       };
-      
-      
       
       
 

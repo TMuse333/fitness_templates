@@ -73,55 +73,24 @@ export const WorkoutProvider = ({ children }) => {
           // Iterate through workouts in the selected week
           const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date - b.date);
       
+       
+              // Initialize an array for the exercise if not present
+           
+      
           // Calculate progress for each exercise
           const progressData = [];
+
+          progressData.push(sortedWorkouts)
       
-          sortedWorkouts.forEach((workout) => {
-            workout.exercises.forEach((exercise) => {
-              const { name } = exercise;
+        
       
-              // Check if the exercise already exists in progressData
-              const existingExercise = progressData.find((item) => item.name === name);
-      
-              if (existingExercise) {
-                // If the exercise exists, add the current workout data to it
-                existingExercise.workouts.push({
-                  date: workout.date,
-                  sets: exercise.sets,
-                });
-              } else {
-                // If the exercise doesn't exist, create a new entry in progressData
-                progressData.push({
-                  name,
-                  workouts: [
-                    {
-                      date: workout.date,
-                      sets: exercise.sets,
-                    },
-                  ],
-                });
-              }
-            });
-          });
-      
-          // Log the workout data for each exercise
-          progressData.forEach((exercise) => {
-            console.log(`Exercise Name: ${exercise.name}`);
-      
-            for (let i = 0; i < exercise.workouts.length; i++) {
-              console.log(`Workout ${i + 1}:`, exercise.workouts[i]);
-            }
-          });
-      
-          console.log('Progress Data:', progressData);
+          console.log('Overall Progress Data:', progressData);
       
           return progressData;
         }
       
         return [];
       };
-      
-      
       
       
 
