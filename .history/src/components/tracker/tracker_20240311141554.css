@@ -45,12 +45,11 @@ margin: 1rem auto;
 }
 
 .tracker-form{
-    margin-bottom: 2rem;
+    margin-bottom: 40rem;
 }
 
-.progress-exercise{
-   border:2px solid white;
-   margin-bottom: 2rem;
+.progress-container{
+    /* transform: translateY(5rem); */
 }
 
 

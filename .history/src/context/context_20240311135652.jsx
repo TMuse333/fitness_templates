@@ -73,7 +73,7 @@ export const WorkoutProvider = ({ children }) => {
           // Iterate through workouts in the selected week
           const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date - b.date);
       
-          sortedWorkouts.forEach((workout, workoutIndex) => {
+          sortedWorkouts.forEach((workout) => {
             workout.exercises.forEach((exercise) => {
               const { name, sets } = exercise;
       
@@ -102,20 +102,16 @@ export const WorkoutProvider = ({ children }) => {
               }));
       
               progressData.push({ name: exerciseName, progressSets });
-      
-              // Log progress for each particular exercise name
-            //   console.log(`Progress for ${exerciseName} from workout ${i + 1} to workout ${i+2}:`, progressSets);
             }
           });
       
-          console.log('Overall Progress Data:', progressData);
+          console.log('Progress Data:', progressData);
       
           return progressData;
         }
       
         return [];
       };
-      
       
 
 
@@ -127,8 +123,7 @@ export const WorkoutProvider = ({ children }) => {
         handleDateChange,
         selectedDate,
         handleProgressSelection,
-        weeklyProgressSelected,
-        calculateProgress
+        weeklyProgressSelected
     }
   
 

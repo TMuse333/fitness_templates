@@ -48,9 +48,9 @@ margin: 1rem auto;
     margin-bottom: 2rem;
 }
 
-.progress-exercise{
-   border:2px solid white;
-   margin-bottom: 2rem;
+.progress-container{
+   position: relative;
+   margin: 0 auto;
 }
 
 

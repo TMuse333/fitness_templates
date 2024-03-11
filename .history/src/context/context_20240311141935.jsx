@@ -104,7 +104,7 @@ export const WorkoutProvider = ({ children }) => {
               progressData.push({ name: exerciseName, progressSets });
       
               // Log progress for each particular exercise name
-            //   console.log(`Progress for ${exerciseName} from workout ${i + 1} to workout ${i+2}:`, progressSets);
+              console.log(`Progress for ${exerciseName} from workout ${i + 1} to workout ${i+}:`, progressSets);
             }
           });
       

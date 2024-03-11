@@ -34,7 +34,7 @@ const Tracker = () => {
         />
       </form>
 
-      {filteredWorkouts.length > 0 &&   !weeklyProgressSelected ? (
+      {filteredWorkouts.length > 0 && ? (
         <div className="workout-boxes">
           {/* Render workout plans for the selected date or week */}
           {filteredWorkouts.map((workout, index) => (
@@ -58,8 +58,8 @@ const Tracker = () => {
       )}
 
       {/* Render progress data */}
-      {calculateProgress().length > 1000 &&(
-        <div className="exercise-progress-container">
+      {calculateProgress().length > 0 (
+        <div className="progress-container">
           <h2>Progress Data</h2>
           {calculateProgress().map((progress, progressIndex) => (
             <div key={progressIndex} className="progress-exercise">

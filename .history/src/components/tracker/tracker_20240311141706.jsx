@@ -58,7 +58,7 @@ const Tracker = () => {
       )}
 
       {/* Render progress data */}
-      {calculateProgress().length > 1000 &&(
+      {calculateProgress().length > 0 &&(
         <div className="exercise-progress-container">
           <h2>Progress Data</h2>
           {calculateProgress().map((progress, progressIndex) => (
