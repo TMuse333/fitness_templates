@@ -135,12 +135,9 @@ export const WorkoutProvider = ({ children }) => {
 
                     const weightMoved = repsAsInt * weightAsInt
 
-                    totalWeight += weightMoved
+                    totalWeight +=
 
                 }
-
-                console.log(`Total weight moved on 
-                ${date}: ${totalWeight}`)
 
                
             }

@@ -71,7 +71,7 @@ const Tracker = () => {
             <p>Date: {workout.date.toLocaleDateString()}</p>
             {workout.sets.map((set, index) => (
               <div key={index}>
-                Set {index + 1}: {set.weight}lbs for {set.reps}
+                Set {index + 1}: {set.weight}lbs for, Reps : {set.reps}
               </div>
             ))}
           </div>

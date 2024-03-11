@@ -133,14 +133,9 @@ export const WorkoutProvider = ({ children }) => {
 
                     const weightAsInt = parseInt(exercise.workouts[i].sets[j].weight, 10);
 
-                    const weightMoved = repsAsInt * weightAsInt
-
-                    totalWeight += weightMoved
+                    const weightMoved = repsAsInt *
 
                 }
-
-                console.log(`Total weight moved on 
-                ${date}: ${totalWeight}`)
 
                
             }

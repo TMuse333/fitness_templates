@@ -139,9 +139,6 @@ export const WorkoutProvider = ({ children }) => {
 
                 }
 
-                console.log(`Total weight moved on 
-                ${date}: ${totalWeight}`)
-
                
             }
 

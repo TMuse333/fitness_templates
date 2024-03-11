@@ -122,27 +122,18 @@ export const WorkoutProvider = ({ children }) => {
                 
                 let totalReps = 0
 
-                let totalWeight = 0
-
                 for(let j = 0; j < exercise.workouts[i].sets.length; j++){
 
-                    
                    
 
                     const repsAsInt = parseInt(exercise.workouts[i].sets[j].reps, 10);
 
-                    const weightAsInt = parseInt(exercise.workouts[i].sets[j].weight, 10);
-
-                    const weightMoved = repsAsInt * weightAsInt
-
-                    totalWeight += weightMoved
+                    totalReps += repsAsInt
 
                 }
 
-                console.log(`Total weight moved on 
-                ${date}: ${totalWeight}`)
-
-               
+                console.log(`Total reps on ${date}:
+                    ${totalReps}`)
             }
 
             
@@ -181,7 +172,6 @@ export const WorkoutProvider = ({ children }) => {
         handleProgressSelection,
         weeklyProgressSelected,
         calculateProgress,
-        progressData
         
     }
   
