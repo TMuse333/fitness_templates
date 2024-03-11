@@ -87,24 +87,24 @@ export const WorkoutProvider = ({ children }) => {
               // Check if the exercise already exists in progressData
               const existingExercise = progressData.find((item) => item.name === name);
       
+              // Calculate total weight for the current exercise
+              const totalWeight = calculateTotalWeight(exercise.sets);
+      
               if (existingExercise) {
                 // If the exercise exists, add the current workout data to it
-                const totalWeight = calculateTotalWeight(exercise.sets);
                 existingExercise.workouts.push({
                   date: workout.date,
                   sets: exercise.sets,
-                  totalWeight,
                 });
               } else {
                 // If the exercise doesn't exist, create a new entry in progressData
-                const totalWeight = calculateTotalWeight(exercise.sets);
                 progressData.push({
                   name,
+                  totalWeight,
                   workouts: [
                     {
                       date: workout.date,
                       sets: exercise.sets,
-                      totalWeight,
                     },
                   ],
                 });
@@ -115,10 +115,10 @@ export const WorkoutProvider = ({ children }) => {
           // Log the workout data for each exercise
           progressData.forEach((exercise) => {
             console.log(`Exercise Name: ${exercise.name}`);
+            console.log(`Total Weight: ${exercise.totalWeight}`);
       
             exercise.workouts.forEach((workout) => {
               console.log(`Workout Date: ${workout.date.toLocaleDateString()}`);
-              console.log(`Total Weight: ${workout.totalWeight}`);
       
               // ... other logging logic for sets
             });
@@ -131,7 +131,6 @@ export const WorkoutProvider = ({ children }) => {
       
         return [];
       };
-      
       
       const calculateTotalWeight = (sets) => {
         let totalWeight = 0;

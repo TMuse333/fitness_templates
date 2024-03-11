@@ -89,24 +89,22 @@ export const WorkoutProvider = ({ children }) => {
       
               if (existingExercise) {
                 // If the exercise exists, add the current workout data to it
-                const totalWeight = calculateTotalWeight(exercise.sets);
                 existingExercise.workouts.push({
                   date: workout.date,
                   sets: exercise.sets,
-                  totalWeight,
                 });
               } else {
                 // If the exercise doesn't exist, create a new entry in progressData
-                const totalWeight = calculateTotalWeight(exercise.sets);
+                const totalWeight = calculateTotalWeight(exercise.workouts);
                 progressData.push({
                   name,
                   workouts: [
                     {
                       date: workout.date,
                       sets: exercise.sets,
-                      totalWeight,
                     },
                   ],
+                  totalWeight,
                 });
               }
             });
@@ -115,13 +113,15 @@ export const WorkoutProvider = ({ children }) => {
           // Log the workout data for each exercise
           progressData.forEach((exercise) => {
             console.log(`Exercise Name: ${exercise.name}`);
+            console.log(`Total Weight: ${exercise.totalWeight}`);
       
-            exercise.workouts.forEach((workout) => {
-              console.log(`Workout Date: ${workout.date.toLocaleDateString()}`);
-              console.log(`Total Weight: ${workout.totalWeight}`);
+            for (let i = 0; i < exercise.workouts.length; i++) {
+              // ... other logging logic
+            }
       
-              // ... other logging logic for sets
-            });
+            const lastWeight =
+              exercise.workouts[exercise.workouts.length - 1].sets.slice(-1)[0].weight;
+            console.log('The last weight is', lastWeight);
           });
       
           console.log('Progress Data:', progressData);
@@ -132,19 +132,19 @@ export const WorkoutProvider = ({ children }) => {
         return [];
       };
       
-      
-      const calculateTotalWeight = (sets) => {
+      const calculateTotalWeight = (workouts) => {
         let totalWeight = 0;
       
-        sets.forEach((set) => {
-          const repsAsInt = parseInt(set.reps, 10);
-          const weightAsInt = parseInt(set.weight, 10);
-          totalWeight += repsAsInt * weightAsInt;
+        workouts.forEach((workout) => {
+          workout.sets.forEach((set) => {
+            const repsAsInt = parseInt(set.reps, 10);
+            const weightAsInt = parseInt(set.weight, 10);
+            totalWeight += repsAsInt * weightAsInt;
+          });
         });
       
         return totalWeight;
       };
-      
       
       
       

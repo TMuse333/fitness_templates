@@ -72,80 +72,80 @@ export const WorkoutProvider = ({ children }) => {
     });
 
 
-    const calculateProgress = () => {
-        if (weekSelected && weeklyProgressSelected) {
-          // Iterate through workouts in the selected week
-          const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date - b.date);
-      
-          // Calculate progress for each exercise
-          const progressData = [];
-      
-          sortedWorkouts.forEach((workout) => {
-            workout.exercises.forEach((exercise) => {
-              const { name } = exercise;
-      
-              // Check if the exercise already exists in progressData
-              const existingExercise = progressData.find((item) => item.name === name);
-      
-              if (existingExercise) {
-                // If the exercise exists, add the current workout data to it
-                const totalWeight = calculateTotalWeight(exercise.sets);
-                existingExercise.workouts.push({
-                  date: workout.date,
-                  sets: exercise.sets,
-                  totalWeight,
-                });
-              } else {
-                // If the exercise doesn't exist, create a new entry in progressData
-                const totalWeight = calculateTotalWeight(exercise.sets);
-                progressData.push({
-                  name,
-                  workouts: [
-                    {
-                      date: workout.date,
-                      sets: exercise.sets,
-                      totalWeight,
-                    },
-                  ],
-                });
-              }
-            });
+  const calculateProgress = () => {
+  if (weekSelected && weeklyProgressSelected) {
+    // Iterate through workouts in the selected week
+    const sortedWorkouts = filteredWorkouts.sort((a, b) => a.date - b.date);
+
+    // Calculate progress for each exercise
+    const progressData = [];
+
+    sortedWorkouts.forEach((workout) => {
+      workout.exercises.forEach((exercise) => {
+        const { name } = exercise;
+
+        // Check if the exercise already exists in progressData
+        const existingExercise = progressData.find((item) => item.name === name);
+
+        if (existingExercise) {
+          // If the exercise exists, add the current workout data to it
+          existingExercise.workouts.push({
+            date: workout.date,
+            sets: exercise.sets,
           });
-      
-          // Log the workout data for each exercise
-          progressData.forEach((exercise) => {
-            console.log(`Exercise Name: ${exercise.name}`);
-      
-            exercise.workouts.forEach((workout) => {
-              console.log(`Workout Date: ${workout.date.toLocaleDateString()}`);
-              console.log(`Total Weight: ${workout.totalWeight}`);
-      
-              // ... other logging logic for sets
-            });
+        } else {
+          // If the exercise doesn't exist, create a new entry in progressData
+          const totalWeight = calculateTotalWeight(exercise.workouts);
+          progressData.push({
+            name,
+            workouts: [
+              {
+                date: workout.date,
+                sets: exercise.sets,
+              },
+            ],
+            totalWeight,
           });
-      
-          console.log('Progress Data:', progressData);
-      
-          return progressData;
         }
-      
-        return [];
-      };
-      
-      
-      const calculateTotalWeight = (sets) => {
-        let totalWeight = 0;
-      
-        sets.forEach((set) => {
-          const repsAsInt = parseInt(set.reps, 10);
-          const weightAsInt = parseInt(set.weight, 10);
-          totalWeight += repsAsInt * weightAsInt;
-        });
-      
-        return totalWeight;
-      };
-      
-      
+      });
+    });
+
+    // Log the workout data for each exercise
+    progressData.forEach((exercise) => {
+      console.log(`Exercise Name: ${exercise.name}`);
+      console.log(`Total Weight: ${exercise.totalWeight}`);
+
+      for (let i = 0; i < exercise.workouts.length; i++) {
+        // ... other logging logic
+      }
+
+      const lastWeight =
+        exercise.workouts[exercise.workouts.length - 1].sets.slice(-1)[0].weight;
+      console.log('The last weight is', lastWeight);
+    });
+
+    console.log('Progress Data:', progressData);
+
+    return progressData;
+  }
+
+  return [];
+};
+
+const calculateTotalWeight = (workouts) => {
+  let totalWeight = 0;
+
+  workouts.forEach((workout) => {
+    workout.sets.forEach((set) => {
+      const repsAsInt = parseInt(set.reps, 10);
+      const weightAsInt = parseInt(set.weight, 10);
+      totalWeight += repsAsInt * weightAsInt;
+    });
+  });
+
+  return totalWeight;
+};
+
       
       
       

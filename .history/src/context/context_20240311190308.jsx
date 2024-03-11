@@ -124,14 +124,13 @@ export const WorkoutProvider = ({ children }) => {
             });
           });
       
-          console.log('Progress Data:', progressData);
+          console.log('Progress Data:', progressData[0].workout[0].totalWeight);
       
           return progressData;
         }
       
         return [];
       };
-      
       
       const calculateTotalWeight = (sets) => {
         let totalWeight = 0;
@@ -144,7 +143,6 @@ export const WorkoutProvider = ({ children }) => {
       
         return totalWeight;
       };
-      
       
       
       

@@ -79,11 +79,10 @@ const Tracker = () => {
                 Set {index + 1}: {set.weight}lbs for {set.reps}
               </div>
             ))}
-
-            <p>Total weight: {workout.totalWeight}lbs </p>
           </div>
 
-       
+          <div>
+            </div>
           
         ))}
       </div>

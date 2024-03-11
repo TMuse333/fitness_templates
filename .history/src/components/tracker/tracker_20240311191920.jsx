@@ -64,7 +64,7 @@ const Tracker = () => {
   <div className="weekly-progress-container">
     <h2>Weekly Progress</h2>
 
-    
+
     {progressData.map((exercise) => (
       <div key={exercise.name} className="exercise-progress">
         <h3>{exercise.name}</h3>
@@ -76,15 +76,10 @@ const Tracker = () => {
 
             {workout.sets.map((set, index) => (
               <div key={index}>
-                Set {index + 1}: {set.weight}lbs for {set.reps}
-              </div>
+        Set {index + 1}: {set.weight}lbs for {set.reps} - Total Weight: {workout.totalWeight}lbs
+      </div>
             ))}
-
-            <p>Total weight: {workout.totalWeight}lbs </p>
           </div>
-
-       
-          
         ))}
       </div>
     ))}

@@ -80,7 +80,7 @@ const Tracker = () => {
               </div>
             ))}
 
-            <p>Total weight: {workout.totalWeight}lbs </p>
+            <p>Total weight: {workout.totalWeight} </p>
           </div>
 
        

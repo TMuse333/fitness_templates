@@ -63,13 +63,11 @@ const Tracker = () => {
       {weeklyProgressSelected && (
   <div className="weekly-progress-container">
     <h2>Weekly Progress</h2>
-
-    
     {progressData.map((exercise) => (
       <div key={exercise.name} className="exercise-progress">
         <h3>{exercise.name}</h3>
 
-
+        
         {exercise.workouts.map((workout) => (
           <div key={workout.date} className="workout-progress">
             <p>Date: {workout.date.toLocaleDateString()}</p>
@@ -79,12 +77,7 @@ const Tracker = () => {
                 Set {index + 1}: {set.weight}lbs for {set.reps}
               </div>
             ))}
-
-            <p>Total weight: {workout.totalWeight}lbs </p>
           </div>
-
-       
-          
         ))}
       </div>
     ))}

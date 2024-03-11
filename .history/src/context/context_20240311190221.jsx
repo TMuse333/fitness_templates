@@ -132,7 +132,6 @@ export const WorkoutProvider = ({ children }) => {
         return [];
       };
       
-      
       const calculateTotalWeight = (sets) => {
         let totalWeight = 0;
       
@@ -144,7 +143,6 @@ export const WorkoutProvider = ({ children }) => {
       
         return totalWeight;
       };
-      
       
       
       
