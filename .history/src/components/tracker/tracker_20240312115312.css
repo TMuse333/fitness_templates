@@ -1,0 +1,63 @@
+.workout-boxes{
+    margin: 0 auto;
+}
+
+.tracker-container{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.exercise-box{
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.exercise-date{
+margin: 1rem auto;
+}
+
+.tracker-buttons button {
+    font-size: 0.75rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    transition: all 0.3s ease-out;
+    
+}
+
+.tracker-buttons button:hover{
+    transform: scale(1.2);
+}
+
+.exercise-sets{
+    margin-bottom: 1rem;
+}
+
+
+
+.date-picker{
+    font-size: 1rem;
+    padding:0.5rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+
+.tracker-form{
+    margin-bottom: 2rem;
+}
+
+.workout-progress{
+   border:2px solid white;
+   margin-bottom: 2rem;
+   padding-bottom: 2rem;
+}
+
+.progress-nav{
+    display: flex;
+    align-items: center;
+}
+
+
+
