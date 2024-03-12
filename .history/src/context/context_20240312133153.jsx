@@ -23,20 +23,13 @@ export const WorkoutProvider = ({ children }) => {
 
     const handleReturnClick = () => {
         setSelectedDate(null); // Reset selected date
-        // setWorkouts([]); 
+        setWorkouts([]); 
         setSelectedWeek(null); // Reset selected week
         setWeekSelected(false); // Reset week selection
         setDateSelected(false); // Reset date selection
-        setProgressData(prevProgressData => {
-            // Access previous state of progressData if needed
-            console.log('Previous progressData:', prevProgressData);
-            // Return the new state value (an empty array)
-            return [];
-        });
-
-      
+        setProgressData([]); 
         setWeeklyProgressSelected(false); // Reset weekly progress selection
-
+        setSelectedExerciseIndex(0); // Reset selected exercise index
       };
 
     const handleProgressSelection = () => {

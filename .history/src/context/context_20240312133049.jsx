@@ -22,22 +22,15 @@ export const WorkoutProvider = ({ children }) => {
     useState(false)
 
     const handleReturnClick = () => {
-        setSelectedDate(null); // Reset selected date
-        // setWorkouts([]); 
-        setSelectedWeek(null); // Reset selected week
-        setWeekSelected(false); // Reset week selection
-        setDateSelected(false); // Reset date selection
-        setProgressData(prevProgressData => {
-            // Access previous state of progressData if needed
-            console.log('Previous progressData:', prevProgressData);
-            // Return the new state value (an empty array)
-            return [];
-        });
+        setSelectedDate(null)
+        setWorkouts([])
+        setSelectedWeek(null)
+        setWeekSelected(false)
+        setDateSelected(false)
+        setProgressData([])
+        setWeeklyProgressSelected(false)
 
-      
-        setWeeklyProgressSelected(false); // Reset weekly progress selection
-
-      };
+    }
 
     const handleProgressSelection = () => {
         handleWeekSelection(); // Ensure weekSelected is set

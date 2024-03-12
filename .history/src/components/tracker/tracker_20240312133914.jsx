@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useWorkout } from "../../context/context";
@@ -81,8 +81,6 @@ const Tracker = () => {
           {filteredWorkouts.map((workout, index) => (
             <div key={index} className="exercise-date">
               <strong>Date:</strong> {workout.date.toDateString()}
-              <div className="exercise-boxes">
-                
               {workout.exercises.map((exercise, exerciseIndex) => (
                 <div key={exerciseIndex} className="exercise-box">
                   <strong>Exercise:</strong> {exercise.name}
@@ -93,7 +91,6 @@ const Tracker = () => {
                   ))}
                 </div>
               ))}
-              </div>
               
             </div>
             
@@ -129,32 +126,31 @@ const Tracker = () => {
        
 <div className="tracker-progress-boxes">
     
-{progressData.map((exercise, index) => (
-      // Only display the selected exercise
-      (index === selectedExerciseIndex && (
-        <div key={exercise.name} className="exercise-progress">
-          <h3>{exercise.name}</h3>
+        {progressData.map((exercise, index) => (
+          // Only display the selected exercise
+          (index === selectedExerciseIndex && (
+            <div key={exercise.name} className="exercise-progress">
+              <h3>{exercise.name}</h3>
 
-<div className="workout-progress-boxes">
+              {exercise.workouts.map((workout) => (
+                <div key={workout.date} className="workout-progress">
+                  <p>Date: {workout.date.toLocaleDateString()}</p>
 
-          {exercise.workouts.map((workout) => (
-            <div key={workout.date} className="workout-progress">
-              <p>Date: {workout.date.toLocaleDateString()}</p>
+                  {workout.sets.map((set, setIndex) => (
+                    <div key={setIndex}
+                    style={{
+                        marginBottom:'0.52rem'
+                    }}>
+                      Set {setIndex + 1}: {set.weight}lbs for {set.reps}
+                    </div>
+                  ))}
 
-              {workout.sets.map((set, setIndex) => (
-                <div key={setIndex} style={{ marginBottom: '0.52rem' }}>
-                  Set {setIndex + 1}: {set.weight}lbs for {set.reps}
+                  <p>Total weight: {workout.totalWeight}lbs</p>
                 </div>
               ))}
-
-              <p>Total weight: {workout.totalWeight}lbs</p>
-              
             </div>
-          ))}
-              </div>
-        </div>
-      ))
-    ))}
+          ))
+        ))}
         </div>
 
 

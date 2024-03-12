@@ -34,7 +34,9 @@ export const WorkoutProvider = ({ children }) => {
             return [];
         });
 
-      
+        setWorkouts(prevWorkouts => {
+            return []
+        })
         setWeeklyProgressSelected(false); // Reset weekly progress selection
 
       };

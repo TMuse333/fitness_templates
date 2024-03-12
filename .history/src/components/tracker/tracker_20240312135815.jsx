@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useWorkout } from "../../context/context";
@@ -81,8 +81,6 @@ const Tracker = () => {
           {filteredWorkouts.map((workout, index) => (
             <div key={index} className="exercise-date">
               <strong>Date:</strong> {workout.date.toDateString()}
-              <div className="exercise-boxes">
-                
               {workout.exercises.map((exercise, exerciseIndex) => (
                 <div key={exerciseIndex} className="exercise-box">
                   <strong>Exercise:</strong> {exercise.name}
@@ -93,7 +91,6 @@ const Tracker = () => {
                   ))}
                 </div>
               ))}
-              </div>
               
             </div>
             
@@ -148,10 +145,8 @@ const Tracker = () => {
               ))}
 
               <p>Total weight: {workout.totalWeight}lbs</p>
-              
             </div>
           ))}
-              </div>
         </div>
       ))
     ))}

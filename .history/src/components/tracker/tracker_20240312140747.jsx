@@ -81,8 +81,7 @@ const Tracker = () => {
           {filteredWorkouts.map((workout, index) => (
             <div key={index} className="exercise-date">
               <strong>Date:</strong> {workout.date.toDateString()}
-              <div className="exercise-boxes">
-                
+              
               {workout.exercises.map((exercise, exerciseIndex) => (
                 <div key={exerciseIndex} className="exercise-box">
                   <strong>Exercise:</strong> {exercise.name}
@@ -93,7 +92,6 @@ const Tracker = () => {
                   ))}
                 </div>
               ))}
-              </div>
               
             </div>
             

@@ -23,21 +23,29 @@ export const WorkoutProvider = ({ children }) => {
 
     const handleReturnClick = () => {
         setSelectedDate(null); // Reset selected date
-        // setWorkouts([]); 
+        setWorkouts([]); // Reset workouts data
         setSelectedWeek(null); // Reset selected week
         setWeekSelected(false); // Reset week selection
         setDateSelected(false); // Reset date selection
-        setProgressData(prevProgressData => {
-            // Access previous state of progressData if needed
-            console.log('Previous progressData:', prevProgressData);
-            // Return the new state value (an empty array)
-            return [];
-        });
-
-      
+        setProgressData([]); // Reset progress data
         setWeeklyProgressSelected(false); // Reset weekly progress selection
-
+        setSelectedExerciseIndex(0); // Reset selected exercise index
       };
+      
+      return (
+        <div className="tracker-container">
+          <p>{trackerText}</p>
+          <div className="tracker-buttons">
+            <button onClick={handleDateSelection}>Date</button>
+            <button onClick={handleWeekSelection}>Week</button>
+            <button onClick={handleProgressSelection}>Progress</button>
+            <button onClick={handleReturnClick}>Return</button> {/* Add the Return button */}
+          </div>
+      
+          {/* Rest of your JSX */}
+        </div>
+      );
+      
 
     const handleProgressSelection = () => {
         handleWeekSelection(); // Ensure weekSelected is set

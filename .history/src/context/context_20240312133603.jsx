@@ -23,7 +23,7 @@ export const WorkoutProvider = ({ children }) => {
 
     const handleReturnClick = () => {
         setSelectedDate(null); // Reset selected date
-        // setWorkouts([]); 
+        setWorkouts([]); 
         setSelectedWeek(null); // Reset selected week
         setWeekSelected(false); // Reset week selection
         setDateSelected(false); // Reset date selection
@@ -34,7 +34,9 @@ export const WorkoutProvider = ({ children }) => {
             return [];
         });
 
-      
+        setWorkouts(prevWorkouts => {
+            return []
+        })
         setWeeklyProgressSelected(false); // Reset weekly progress selection
 
       };

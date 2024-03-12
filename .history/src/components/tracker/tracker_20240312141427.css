@@ -101,17 +101,17 @@ margin: 0 auto;
 
     .exercise-box{
         width:25vw;
-        max-width: 390px;
+        max-width: 460px;
         margin: 0 auto 2rem auto;
         height:25vw;
-        max-height: 250px;
+        max-height: 318px;
     }
 
     .exercise-boxes{
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(33%,1fr));
         width:100vw;
-        /* background-color: rgb(40, 20, 20); */
+        background-color: rgb(40, 20, 20);
         align-items: center;
         justify-content: center;
         
