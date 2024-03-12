@@ -1,0 +1,54 @@
+.login-box{
+    background-color: #00bfff;
+    padding:2rem;
+    width:90vw;
+    margin:0 auto;
+    max-width: 600px;
+
+}
+
+.login-box input{
+    padding:1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+ 
+}
+
+.login-button{
+    background-color: black;
+    margin: 0 auto;
+    padding: 1;
+    /* margin-top: 1rem; */
+    transition: all 0.3s ease-out;
+}
+
+.login-button:hover{
+    border: 2px solid white;
+    transform: scale(1.2);
+}
+
+.login-box input::placeholder {
+    /* Style the placeholder text here */
+    color: white;
+    opacity: 1; /* You can adjust the opacity if needed */
+    font-size: 1rem;
+  }
+
+.login-container{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tracker-options-container{
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.tracker-options-container button:first-child{
+    margin
+}
