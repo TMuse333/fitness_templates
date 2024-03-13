@@ -47,7 +47,7 @@ setViewData, setInsertData } = useWorkout();
   return (
     <>
 
-{!showOptions ? (
+{/* {!showOptions ? (
 
 
 
@@ -95,7 +95,7 @@ setViewData, setInsertData } = useWorkout();
         <p>Forgot password? Click here</p>
       </div>
 
-) : (
+) : ( */}
     <div className="tracker-options-container">
       <h2>Welcome, {username}!</h2>
       <p>What would you like to do?</p>

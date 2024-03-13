@@ -51,10 +51,10 @@ const InsertData = ({ addWorkout }) => {
   
 
   const handleSaveWorkout = () => {
-    // if (exerciseName === "") {
-    //   alert("Please enter the name of the exercise first.");
-    //   return;
-    // }
+    if (exerciseName === "") {
+      alert("Please enter the name of the exercise first.");
+      return;
+    }
   
     const newWorkout = {
       date: selectedDate,

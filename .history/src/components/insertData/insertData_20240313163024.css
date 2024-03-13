@@ -1,0 +1,6 @@
+.insert-data-container{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

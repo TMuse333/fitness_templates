@@ -1,0 +1,11 @@
+.insert-data-container{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.date-name-container{
+    display: flex;
+    flex-direction: c;
+}

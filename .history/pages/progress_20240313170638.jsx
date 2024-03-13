@@ -57,7 +57,7 @@ const Progress = () => {
     <Tracker/>
    ) : insertData ? (
    <InsertData/>
-   ) : <Login/>}
+   ) : }
 
 
 

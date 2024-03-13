@@ -4,7 +4,6 @@ import Login from "../src/components/login/Login";
 import Footer from "../src/components/footer/footer";
 import Tracker from "../src/components/tracker/tracker";
 import { useWorkout } from "../src/context/context";
-import InsertData from "../src/components/insertData/insertData";
 
 
 
@@ -56,7 +55,7 @@ const Progress = () => {
    {viewData ? (
     <Tracker/>
    ) : insertData ? (
-   <InsertData/>
+   <Inse
    ) : <Login/>}
 
 

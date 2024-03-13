@@ -21,56 +21,28 @@ const InsertData = ({ addWorkout }) => {
   };
 
   const handleSetChange = (index, field, value) => {
-    if (exerciseName === "") {
-      alert("Please enter the name of the exercise first.");
-      return;
-    }
-  
-    const updatedSets = [...sets]; // Create a copy of the sets array
-    updatedSets[index] = { ...updatedSets[index], [field]: value }; // Update the specified set
-    setSets(updatedSets); // Update the state with the new sets array
+    const updatedSets = [...sets];
+    updatedSets[index][field] = value;
+    setSets(updatedSets);
   };
-  
-  
 
   const handleAddExercise = () => {
-    if (exerciseName === "") {
-      alert("Please enter the name of the exercise first.");
-      return;
-    }
-  
     const newExercise = {
       name: exerciseName,
       sets: sets.filter((set) => set.weight !== "" && set.reps !== ""),
     };
-  
-    setExercises([...exercises, newExercise]); // Add the new exercise to the array
-    setSets([{ weight: "", reps: "" }]); // Reset the sets array
-    setExerciseName(""); // Reset the exercise name
+    setExercises([...exercises, newExercise]);
+    setSets([{ weight: "", reps: "" }]);
+    setExerciseName("");
+
   };
-  
 
   const handleSaveWorkout = () => {
-    // if (exerciseName === "") {
-    //   alert("Please enter the name of the exercise first.");
-    //   return;
-    // }
-  
-    const newWorkout = {
-      date: selectedDate,
-      exercises: [...exercises, {
-        name: exerciseName,
-        sets: sets.filter((set) => set.weight !== "" && set.reps !== ""),
-      }]
-    };
-  
+    const newWorkout = { date: selectedDate, exercises };
     setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
     console.log('the workout:', workoutData);
     setExercises([]);
-    setSets([{ weight: "", reps: "" }]);
-    setExerciseName("");
   };
-  
 
 
   useEffect(() => {
@@ -82,10 +54,6 @@ const InsertData = ({ addWorkout }) => {
       setDirectionText("");
     }
   }, [exerciseName, sets]);
-
-  useEffect(() => {
-    console.log('the workout2:', workoutData);
-  }, [workoutData]);
 
 
   return (

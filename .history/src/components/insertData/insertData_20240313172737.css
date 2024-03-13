@@ -1,0 +1,36 @@
+.insert-data-container{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.date-name-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insert-data-datePicker{
+    margin-bottom: 1rem;
+}
+
+.insert-data-form input{
+    padding:1rem 0.5rem;
+    padding-left: 0;
+    border:2px solid grey;
+    border-radius: 1rem;
+
+}
+
+.insert-data-form input::placeholder {
+    /* Your styles for the placeholder text */
+    font-size: 1rem;
+    padding:1rem;
+  }
+
+  .insert-data-form input[name="weight"] {
+    font-size: 1rem;
+    padding:1rem;
+  }
+  

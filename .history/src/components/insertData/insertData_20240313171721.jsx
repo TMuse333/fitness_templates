@@ -34,43 +34,22 @@ const InsertData = ({ addWorkout }) => {
   
 
   const handleAddExercise = () => {
-    if (exerciseName === "") {
-      alert("Please enter the name of the exercise first.");
-      return;
-    }
-  
     const newExercise = {
       name: exerciseName,
       sets: sets.filter((set) => set.weight !== "" && set.reps !== ""),
     };
-  
-    setExercises([...exercises, newExercise]); // Add the new exercise to the array
-    setSets([{ weight: "", reps: "" }]); // Reset the sets array
-    setExerciseName(""); // Reset the exercise name
+    setExercises([...exercises, newExercise]);
+    setSets([{ weight: "", reps: "" }]);
+    setExerciseName("");
+
   };
-  
 
   const handleSaveWorkout = () => {
-    // if (exerciseName === "") {
-    //   alert("Please enter the name of the exercise first.");
-    //   return;
-    // }
-  
-    const newWorkout = {
-      date: selectedDate,
-      exercises: [...exercises, {
-        name: exerciseName,
-        sets: sets.filter((set) => set.weight !== "" && set.reps !== ""),
-      }]
-    };
-  
+    const newWorkout = { date: selectedDate, exercises };
     setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
     console.log('the workout:', workoutData);
     setExercises([]);
-    setSets([{ weight: "", reps: "" }]);
-    setExerciseName("");
   };
-  
 
 
   useEffect(() => {
