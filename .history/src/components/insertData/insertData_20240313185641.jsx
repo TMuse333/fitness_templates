@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import ExerciseDisplay from "../exerciseDisplay/ExerciseDisplay";
 import './insertData.css';
 
 const InsertData = ({ addWorkout }) => {
@@ -130,9 +129,7 @@ const InsertData = ({ addWorkout }) => {
         <div>
   <h3>Workout Submitted</h3>
  
-<ExerciseDisplay
-workoutData={workoutData}
-/>
+ <WorkoutDis
 
   <button className="tracker-button"
   onClick={handleAddAnotherWorkout}>

@@ -116,9 +116,7 @@ const InsertData = ({ addWorkout }) => {
     setSelectedDate(new Date());
   };
 
-  const formatDate = (date) => {
-    return new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-  };
+
   
 
 
@@ -130,9 +128,9 @@ const InsertData = ({ addWorkout }) => {
         <div>
   <h3>Workout Submitted</h3>
  
-<ExerciseDisplay
-workoutData={workoutData}
-/>
+ <ExerciseDisplay
+ workout={workoutData}
+ />
 
   <button className="tracker-button"
   onClick={handleAddAnotherWorkout}>

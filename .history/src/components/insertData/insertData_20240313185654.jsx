@@ -130,9 +130,7 @@ const InsertData = ({ addWorkout }) => {
         <div>
   <h3>Workout Submitted</h3>
  
-<ExerciseDisplay
-workoutData={workoutData}
-/>
+ <ExerciseDisplay
 
   <button className="tracker-button"
   onClick={handleAddAnotherWorkout}>

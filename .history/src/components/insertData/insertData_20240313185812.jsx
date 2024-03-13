@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import ExerciseDisplay from "../exerciseDisplay/ExerciseDisplay";
 import './insertData.css';
 
 const InsertData = ({ addWorkout }) => {
@@ -130,9 +129,24 @@ const InsertData = ({ addWorkout }) => {
         <div>
   <h3>Workout Submitted</h3>
  
-<ExerciseDisplay
-workoutData={workoutData}
-/>
+  {workoutData.map((workout, workoutIndex) => (
+  <div key={workoutIndex}
+  className='insert-data-workout-summary'>
+    <h3>Workout Date: {formatDate(workout.date)}</h3>
+    <ul>
+      {workout.exercises.map((exercise, index) => (
+        <li key={index}>
+          {exercise.name}:
+          <ul>
+            {exercise.sets.map((set, idx) => (
+              <li key={idx}>Weight: {set.weight}, Reps: {set.reps}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
 
   <button className="tracker-button"
   onClick={handleAddAnotherWorkout}>

@@ -132,7 +132,7 @@ const InsertData = ({ addWorkout }) => {
  
 <ExerciseDisplay
 workoutData={workoutData}
-/>
+
 
   <button className="tracker-button"
   onClick={handleAddAnotherWorkout}>
