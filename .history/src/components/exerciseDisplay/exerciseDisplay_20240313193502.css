@@ -1,0 +1,14 @@
+.exercise-display-container{
+    margin: 0 auto;
+    width:100vw;
+
+}
+
+.exercise-display-box{
+    width:80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+    margin: 0 auto;
+}

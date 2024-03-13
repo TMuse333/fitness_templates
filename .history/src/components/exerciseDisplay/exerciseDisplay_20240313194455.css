@@ -1,0 +1,31 @@
+.exercise-display-container{
+    margin: 0 auto;
+    width:100vw;
+
+}
+
+.exercise-display-box{
+    width:80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+    margin: 0 auto;
+}
+
+.exercise-display-container ul {
+list-style: none;
+margin: 0 auto;
+
+
+}
+
+.display-list{
+    display: flex;
+    background-color: rgb(29, 12, 12);
+    border: 2px solid white;
+    width:80vw;
+    margin: 0 auto;
+    
+}
+

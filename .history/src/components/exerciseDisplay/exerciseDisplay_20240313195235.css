@@ -1,0 +1,39 @@
+.exercise-display-container{
+    margin: 0 auto;
+    width:80vw;
+    background: radial-gradient(circle, #00bfff, #0077b3);
+padding
+
+}
+
+.exercise-display-box{
+    width:80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+    margin: 0 auto 1rem auto;
+}
+
+.exercise-display-container ul {
+list-style: none;
+margin: 0 auto;
+
+
+}
+
+.display-list{
+    display: flex;
+    /* background-color: rgb(29, 12, 12); */
+    /* border: 2px solid white; */
+    width:80vw;
+    margin: 0rem auto ;
+    justify-content: space-around;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.display-list span{
+    width:5vw;
+}
+

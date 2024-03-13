@@ -1,0 +1,26 @@
+.exercise-display-container{
+    margin: 0 auto;
+    width:100vw;
+
+}
+
+.exercise-display-box{
+    width:80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+    margin: 0 auto;
+}
+
+.exercise-display-container ul {
+list-style: none;
+margin: 0 auto;
+
+background-color: red;
+}
+
+.display-list{
+    display: flex;
+}
+
