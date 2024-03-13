@@ -57,7 +57,7 @@ const Navbar = ({links,id}) => {
   }, []);
 
   const style = {
-height: isMobile && !subMenuVisible ? '0px' :  isMobile ? '240px' : 'auto',
+height: isMobile && !subMenuVisible ? '0px' :  isMobile ? '230px' : 'auto',
 overflowY:'hidden',
 width: isMobile ?'80px':'auto',
 backgroundImage: isMobile ? 'linear-gradient(to right, #00bfff, #4db8ff, #64bcff, #00bfff)' : null,

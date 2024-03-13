@@ -97,7 +97,7 @@ const InsertData = ({ addWorkout }) => {
   <h3>Workout Submitted</h3>
   <p>Date: {selectedDate.toString()}</p>
   <ul>
-    {exercises.map((exercise, index) => (
+    {workoutexercises.map((exercise, index) => (
       <li key={index}>
         {exercise.name}:
         <ul>

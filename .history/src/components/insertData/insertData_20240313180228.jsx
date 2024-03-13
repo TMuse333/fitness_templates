@@ -11,7 +11,8 @@ const InsertData = ({ addWorkout }) => {
   const [selectedDate, setSelectedDate] = useState(new Date()); // Default date set to the current date
 
   const [directionText, setDirectionText] = useState('');
-  const [workoutSubmitted, setWorkoutSubmitted] = useState(false);
+
+  const [workoutSubmitted, setWorkoutSubmitted] = useState
 
   const handleAddSet = () => {
     // Check if the current input for weight or reps is empty
@@ -39,6 +40,8 @@ const InsertData = ({ addWorkout }) => {
     setSets(updatedSets); // Update the state with the new sets array
   };
   
+  
+
   const handleAddExercise = () => {
     if (exerciseName === "") {
       alert("Please enter the name of the exercise first.");
@@ -57,6 +60,11 @@ const InsertData = ({ addWorkout }) => {
   
 
   const handleSaveWorkout = () => {
+    // if (exerciseName === "") {
+    //   alert("Please enter the name of the exercise first.");
+    //   return;
+    // }
+  
     const newWorkout = {
       date: selectedDate,
       exercises: [...exercises, {
@@ -66,12 +74,13 @@ const InsertData = ({ addWorkout }) => {
     };
   
     setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
-    // setExercises([]);
-    // setSets([{ weight: "", reps: "" }]);
-    // setExerciseName("");
-    setWorkoutSubmitted(true); // Set workoutSubmitted to true when the workout is submitted
+    console.log('the workout:', workoutData);
+    setExercises([]);
+    setSets([{ weight: "", reps: "" }]);
+    setExerciseName("");
   };
   
+
 
   useEffect(() => {
     if (exerciseName === "") {
@@ -91,64 +100,62 @@ const InsertData = ({ addWorkout }) => {
   return (
     <div className="insert-data-container">
       <h2>Add Workout</h2>
-      {workoutSubmitted ? (
-        // Render the submitted workout details if workoutSubmitted is true
-        <div>
-  <h3>Workout Submitted</h3>
-  <p>Date: {selectedDate.toString()}</p>
-  <ul>
-    {exercises.map((exercise, index) => (
-      <li key={index}>
-        {exercise.name}:
-        <ul>
-          {exercise.sets.map((set, idx) => (
-            <li key={idx}>Weight: {set.weight}, Reps: {set.reps}</li>
-          ))}
-        </ul>
-      </li>
-    ))}
-  </ul>
-</div>
-      ) : (
-        // Render the input forms if workoutSubmitted is false
-        <div className="exercise-form">
-          <div className="date-name-container insert-data-form">
-            <DatePicker
-              selected={selectedDate}
-              onChange={date => setSelectedDate(date)}
-              className='insert-data-datePicker'
+      <p>{directionText}</p>
+      <div className="exercise-form">
+        <div className="date-name-container insert-data-form"
+        >
+
+ 
+        <DatePicker
+          selected={selectedDate}
+          onChange={date => setSelectedDate(date)}
+        className='insert-data-datePicker'
+          // You can customize the appearance of the date picker as needed
+        />
+        <input
+          type="text"
+          placeholder="Exercise Name"
+          value={exerciseName}
+          onChange={handleExerciseNameChange}
+          
+          style={{
+            marginBottom:'1rem'
+          }}
+        />
+               </div>
+        {sets.map((set, index) => (
+          <div  className='insert-data-form'
+          key={index}>
+            <input
+              type="text"
+              placeholder="Weight"
+              value={set.weight}
+             
+              onChange={(e) => handleSetChange(index, "weight", e.target.value)}
             />
             <input
               type="text"
-              placeholder="Exercise Name"
-              value={exerciseName}
-              onChange={handleExerciseNameChange}
-              style={{ marginBottom: '1rem' }}
+              placeholder="Reps"
+              value={set.reps}
+             
+              onChange={(e) => handleSetChange(index, "reps", e.target.value)}
             />
           </div>
-          {sets.map((set, index) => (
-            <div className='insert-data-form' key={index}>
-              <input
-                type="text"
-                placeholder="Weight"
-                value={set.weight}
-                onChange={(e) => handleSetChange(index, "weight", e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Reps"
-                value={set.reps}
-                onChange={(e) => handleSetChange(index, "reps", e.target.value)}
-              />
-            </div>
-          ))}
-          <div className="insert-data-buttons" style={{ marginTop: '1.5rem' }}>
-            <button className="tracker-button" onClick={handleAddSet}>Add Set</button>
-            <button className="tracker-button" onClick={handleAddExercise}>Add Exercise</button>
-            <button className="tracker-button" onClick={handleSaveWorkout}>Save Workout</button>
-          </div>
+        ))}
+        <div className="insert-data-buttons"
+          style={{
+            marginTop: '1.5rem'
+          }}>
+
+
+          <button className="tracker-button"
+            onClick={handleAddSet}>Add Set</button>
+          <button className="tracker-button"
+            onClick={handleAddExercise}>Add Exercise</button>
+          <button className="tracker-button"
+            onClick={handleSaveWorkout}>Save Workout</button>
         </div>
-      )}
+      </div>
     </div>
   );
 };

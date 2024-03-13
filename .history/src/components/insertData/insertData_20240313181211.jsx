@@ -66,9 +66,9 @@ const InsertData = ({ addWorkout }) => {
     };
   
     setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
-    // setExercises([]);
-    // setSets([{ weight: "", reps: "" }]);
-    // setExerciseName("");
+    setExercises([]);
+    setSets([{ weight: "", reps: "" }]);
+    setExerciseName("");
     setWorkoutSubmitted(true); // Set workoutSubmitted to true when the workout is submitted
   };
   

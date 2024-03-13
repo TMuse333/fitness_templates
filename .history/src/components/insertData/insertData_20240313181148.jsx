@@ -66,9 +66,9 @@ const InsertData = ({ addWorkout }) => {
     };
   
     setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
-    // setExercises([]);
-    // setSets([{ weight: "", reps: "" }]);
-    // setExerciseName("");
+    setExercises([]);
+    setSets([{ weight: "", reps: "" }]);
+    setExerciseName("");
     setWorkoutSubmitted(true); // Set workoutSubmitted to true when the workout is submitted
   };
   
@@ -94,21 +94,21 @@ const InsertData = ({ addWorkout }) => {
       {workoutSubmitted ? (
         // Render the submitted workout details if workoutSubmitted is true
         <div>
-  <h3>Workout Submitted</h3>
-  <p>Date: {selectedDate.toString()}</p>
-  <ul>
-    {exercises.map((exercise, index) => (
-      <li key={index}>
-        {exercise.name}:
-        <ul>
-          {exercise.sets.map((set, idx) => (
-            <li key={idx}>Weight: {set.weight}, Reps: {set.reps}</li>
-          ))}
-        </ul>
-      </li>
-    ))}
-  </ul>
-</div>
+          <h3>Workout Submitted</h3>
+          <p>Date: {selectedDate.toString()}</p>
+          <ul>
+            {exercises.map((exercise, index) => (
+              <li key={index}>
+                {exercise.name}:
+                <ul>
+                  {exercise.sets.map((set, idx) => (
+                    <li key={idx}>Weight: {set.weight}, Reps: {set.reps}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : (
         // Render the input forms if workoutSubmitted is false
         <div className="exercise-form">

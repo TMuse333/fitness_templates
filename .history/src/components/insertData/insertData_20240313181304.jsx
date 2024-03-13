@@ -65,7 +65,7 @@ const InsertData = ({ addWorkout }) => {
       }]
     };
   
-    setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
+    // setWorkoutData(prevWorkoutData => [...prevWorkoutData, newWorkout]);
     // setExercises([]);
     // setSets([{ weight: "", reps: "" }]);
     // setExerciseName("");
