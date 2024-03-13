@@ -115,11 +115,6 @@ const InsertData = ({ addWorkout }) => {
     setSelectedDate(new Date());
   };
 
-  const formatDate = (date) => {
-    return new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-  };
-  
-
 
   return (
     <div className="insert-data-container">
@@ -130,9 +125,8 @@ const InsertData = ({ addWorkout }) => {
   <h3>Workout Submitted</h3>
  
   {workoutData.map((workout, workoutIndex) => (
-  <div key={workoutIndex}
-  className='insert-data-workout-summary'>
-    <h3>Workout Date: {formatDate(workout.date)}</h3>
+  <div key={workoutIndex}>
+    <h3>Workout Date: {workout.date.toString()}</h3>
     <ul>
       {workout.exercises.map((exercise, index) => (
         <li key={index}>

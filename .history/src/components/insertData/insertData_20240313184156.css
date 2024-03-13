@@ -37,16 +37,5 @@
   
 
   .insert-data-workout-summary{
-    border:2px solid white;
-    width:90vw;
-    margin: 0 auto;
-  }
-
-  .insert-data-workout-summary ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .insert-data-workout-summary li{
-    margin-bottom: 1rem;
+    
   }

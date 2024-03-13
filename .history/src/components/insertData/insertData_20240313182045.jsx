@@ -50,26 +50,10 @@ const InsertData = ({ addWorkout }) => {
       sets: sets.filter((set) => set.weight !== "" && set.reps !== ""),
     };
   
-    if (workoutSubmitted) {
-      // Add the current exercise and sets to the workout data
-      const newWorkout = {
-        date: selectedDate,
-        exercises: [...exercises, newExercise],
-      };
-      setWorkoutData((prevWorkoutData) => [...prevWorkoutData, newWorkout]);
-      setExercises([]);
-      setSets([{ weight: "", reps: "" }]);
-      setExerciseName("");
-    } else {
-      // Add the new exercise to the array
-      setExercises([...exercises, newExercise]);
-      // Reset the sets array
-      setSets([{ weight: "", reps: "" }]);
-      // Reset the exercise name
-      setExerciseName("");
-    }
+    setExercises([...exercises, newExercise]); // Add the new exercise to the array
+    setSets([{ weight: "", reps: "" }]); // Reset the sets array
+    setExerciseName(""); // Reset the exercise name
   };
-  
   
   const handleSaveWorkout = () => {
     // Validate the last exercise before adding it to the workout data
@@ -104,21 +88,7 @@ const InsertData = ({ addWorkout }) => {
 
   useEffect(() => {
     console.log('the workout2:', workoutData);
-    console.log('les exercises',exercises)
   }, [workoutData]);
-
-  const handleAddAnotherWorkout = () => {
-    setWorkoutSubmitted(false);
-    setExerciseName("");
-    setSets([{ weight: "", reps: "" }]);
-    setExercises([]);
-    setSelectedDate(new Date());
-  };
-
-  const formatDate = (date) => {
-    return new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-  };
-  
 
 
   return (
@@ -128,30 +98,19 @@ const InsertData = ({ addWorkout }) => {
         // Render the submitted workout details if workoutSubmitted is true
         <div>
   <h3>Workout Submitted</h3>
- 
-  {workoutData.map((workout, workoutIndex) => (
-  <div key={workoutIndex}
-  className='insert-data-workout-summary'>
-    <h3>Workout Date: {formatDate(workout.date)}</h3>
-    <ul>
-      {workout.exercises.map((exercise, index) => (
-        <li key={index}>
-          {exercise.name}:
-          <ul>
-            {exercise.sets.map((set, idx) => (
-              <li key={idx}>Weight: {set.weight}, Reps: {set.reps}</li>
-            ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  </div>
-))}
-
-  <button className="tracker-button"
-  onClick={handleAddAnotherWorkout}>
-    Add another workout
-  </button>
+  <p>Date: {selectedDate.toString()}</p>
+  <ul>
+    {exercises.map((exercise, index) => (
+      <li key={index}>
+        {exercise.name}:
+        <ul>
+          {exercise.sets.map((set, idx) => (
+            <li key={idx}>Weight: {set.weight}, Reps: {set.reps}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
 </div>
       ) : (
         // Render the input forms if workoutSubmitted is false

@@ -131,8 +131,8 @@ const InsertData = ({ addWorkout }) => {
  
   {workoutData.map((workout, workoutIndex) => (
   <div key={workoutIndex}
-  className='insert-data-workout-summary'>
-    <h3>Workout Date: {formatDate(workout.date)}</h3>
+  className=''>
+    <h3>Workout Date: {workout.date.toString()}</h3>
     <ul>
       {workout.exercises.map((exercise, index) => (
         <li key={index}>
