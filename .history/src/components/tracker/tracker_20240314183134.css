@@ -1,0 +1,141 @@
+.workout-boxes{
+    margin: 0 auto;
+}
+
+.tracker-container{
+    width:80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: black;
+    height:100vh;
+    max-width: 1000px;
+}
+
+.exercise-box{
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.exercise-date{
+margin: 1rem auto;
+}
+
+.tracker-button  {
+    font-size: 0.75rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    transition: all 0.3s ease-out;
+    align-items: center;
+    width:fit-content;
+    
+}
+
+.tracker-button:hover{
+    transform: scale(1.2);
+}
+
+.exercise-sets{
+    margin-bottom: 1rem;
+}
+
+
+
+.date-picker{
+    font-size: 1rem;
+    padding:0.5rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+    position: relative;
+    z-index: 2;
+}
+
+.tracker-form{
+    margin-bottom: 2rem;
+}
+
+.workout-progress{
+   border:2px solid white;
+   margin-bottom: 2rem;
+   padding-bottom: 2rem;
+   width:90vw;
+   margin-left:auto;
+   margin-right: auto;
+   /* max-width: 200px; */
+}
+
+.progress-nav{
+    display: flex;
+    align-items: center;
+
+justify-content: center;
+width:90vw;
+margin: 0 auto;
+}
+
+.progress-button{
+    font-size: 1rem;
+    color:white;
+    background-color: transparent;
+}
+.tracker-insert-button{
+    background-color: transparent;
+}
+
+@media screen and (min-width:655px){
+
+    .tracker-button{
+        font-size: 1rem;
+    }
+    .tracker-progress-boxes{
+        display: flex;
+        flex-direction: column;
+       /* grid-template-columns: repeat(auto-fill,minmax(33%,1fr)); */
+        margin: 0 auto;
+        width:100vw;
+        justify-content: center;
+        align-items: center;
+        /* background-color: rgb(39, 30, 30); */
+  
+    }
+
+    .workout-progress-boxes{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(33%,1fr));
+        width:100vw;
+        max-width: 1500px;
+
+    }
+
+    .workout-progress{
+        width:30vw;
+        max-width: 460px;
+    }
+
+    .exercise-box{
+        width:25vw;
+        max-width: 390px;
+        margin: 0 auto 2rem auto;
+        height:25vw;
+        max-height: 250px;
+    }
+
+    .exercise-boxes{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(33%,1fr));
+        width:100vw;
+        /* background-color: rgb(40, 20, 20); */
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .progress-nav{
+        margin:0 auto;
+        max-width: 500px;
+    }
+}
+
+
+
