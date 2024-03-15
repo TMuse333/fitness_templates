@@ -220,9 +220,9 @@ export const WorkoutProvider = ({ children }) => {
   useEffect(() => {
     if (workouts.data && selectedDate) {
       const filtered = workouts.data.filter((workout) => {
-        return workout.date === selectedDate
+        return workout.date === selectedDate.toLocaleDateString();
       });
-      setFilteredWorkouts(filtered);
+      setFilteredData(filtered);
     }
   }, [workouts.data, selectedDate]);
   

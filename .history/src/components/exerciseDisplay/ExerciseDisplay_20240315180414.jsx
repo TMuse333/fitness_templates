@@ -21,7 +21,7 @@ function formatDate(date) {
       </div>
       {workoutData.map((workout, index) => (
   <div key={index} className="exercise-display-list">
-    {weekSelected && <h2 className="exercise-display-date">Date: {formatDate(workout.date)}</h2>}
+    {weekSelected && <h2 className="exercise-display-date">Date: {workout.date}</h2>}
     {workout.exercises.map((exercise, exIndex) => (
       <React.Fragment key={exIndex}>
         <div className="display-list">

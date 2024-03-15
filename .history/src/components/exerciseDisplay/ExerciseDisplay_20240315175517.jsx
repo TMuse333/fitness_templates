@@ -7,11 +7,6 @@ const ExerciseDisplay = ({ workoutData }) => {
 
 const {weekSelected} = useWorkout()
 
-function formatDate(date) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(date).toLocaleDateString(undefined, options);
-}
-
   return (
     <div className="exercise-display-container">
       <div className="exercise-display-box">
@@ -21,11 +16,10 @@ function formatDate(date) {
       </div>
       {workoutData.map((workout, index) => (
   <div key={index} className="exercise-display-list">
-    {weekSelected && <h2 className="exercise-display-date">Date: {formatDate(workout.date)}</h2>}
+    {/* {weekSelected && <h2 className="exercise-display-date">Date: {workout.date.toLocaleDateString()}</h2>} */}
     {workout.exercises.map((exercise, exIndex) => (
       <React.Fragment key={exIndex}>
         <div className="display-list">
-          <h2></h2>
           <span>{exercise.name}</span>
           <div>
             <ul>

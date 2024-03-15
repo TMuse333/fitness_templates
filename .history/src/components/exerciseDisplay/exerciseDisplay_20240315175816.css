@@ -6,9 +6,6 @@ padding: 1rem 0;
 margin-bottom: 2rem;
 border-radius: 1rem;
 overflow-x: hidden;
-display: flex;
-flex-direction: column;
-justify-content: center;
 
 }
 
@@ -38,17 +35,13 @@ margin: 0 auto;
     /* border: 2px solid white; */
     width:80vw;
     margin: 0rem auto ;
-    /* justify-content: space-around;
-    padding: 0; */
+    justify-content: space-around;
+    padding: 0;
     margin-bottom: 1rem;
-    text-align: left;
 }
 
 .display-list span{
-    width:min-content;
-    
-    padding: 0;
-    margin:0;
+    width:5vw;
 }
 
 .exercise-display-box span{

@@ -216,16 +216,6 @@ export const WorkoutProvider = ({ children }) => {
   //     });
   //   }
   // }, [workouts.data, dateSelected]);
-
-  useEffect(() => {
-    if (workouts.data && selectedDate) {
-      const filtered = workouts.data.filter((workout) => {
-        return workout.date === selectedDate
-      });
-      setFilteredWorkouts(filtered);
-    }
-  }, [workouts.data, selectedDate]);
-  
   
     
 

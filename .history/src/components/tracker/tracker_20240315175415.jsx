@@ -87,11 +87,11 @@ setInsertData(true)
       {filteredWorkouts.length > 0 &&   !weeklyProgressSelected  ?(
        <div>
 
-        {/* {dateSelected ? (
+        {dateSelected ? (
           <h2>Training on {selectedDate.toLocaleDateString()}</h2>
         ) :(
           <h2>Training during the week of {selectedDate.toLocaleDateString()}</h2>
-        )} */}
+        )}
        
        <button onClick={handleReturnClick}
        className='tracker-button'

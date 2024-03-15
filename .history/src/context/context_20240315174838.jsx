@@ -222,7 +222,7 @@ export const WorkoutProvider = ({ children }) => {
       const filtered = workouts.data.filter((workout) => {
         return workout.date === selectedDate
       });
-      setFilteredWorkouts(filtered);
+      setFilteredData(filtered);
     }
   }, [workouts.data, selectedDate]);
   
