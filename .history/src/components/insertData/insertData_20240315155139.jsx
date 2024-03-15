@@ -87,7 +87,7 @@ setInsertData} = useWorkout()
         }]
       };
 
-      console.log('new workout:',newWorkout)
+      console.log('new workout:',new)
   
 
       axios.post('http://localhost:9000/workouts', newWorkout)

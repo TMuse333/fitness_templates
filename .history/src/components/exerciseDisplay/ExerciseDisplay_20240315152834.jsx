@@ -16,7 +16,7 @@ const {weekSelected} = useWorkout()
       </div>
       {workoutData.map((workout, index) => (
   <div key={index} className="exercise-display-list">
-    {weekSelected && <h2 className="exercise-display-date">Date: {workout.date.toLocaleDateString()}</h2>}
+    {weekSelected && <div>Date: {workout.date.toLocaleDateString()}</div>}
     {workout.exercises.map((exercise, exIndex) => (
       <React.Fragment key={exIndex}>
         <div className="display-list">

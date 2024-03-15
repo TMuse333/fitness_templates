@@ -86,10 +86,8 @@ setInsertData} = useWorkout()
           sets: sets.filter((set) => set.weight !== "" && set.reps !== ""),
         }]
       };
-
-      console.log('new workout:',newWorkout)
   
-
+      
       axios.post('http://localhost:9000/workouts', newWorkout)
         .then(response => {
           console.log('Workout data saved:', response.data);

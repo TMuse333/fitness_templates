@@ -21,12 +21,10 @@ export const WorkoutProvider = ({ children }) => {
   const [viewData, setViewData] = useState(false)
 
   const [insertData, setInsertData] = useState(false)
-  const [loading, setLoading] = useState(true);
+
 
     const [weeklyProgressSelected, setWeeklyProgressSelected] =
     useState(false)
-
-    const [filteredWorkouts, setFilteredWorkouts] = useState([]);
 
     const handleReturnClick = () => {
         setSelectedDate(null); // Reset selected date
@@ -61,16 +59,14 @@ export const WorkoutProvider = ({ children }) => {
       
   
     const exerciseMap = new Map();
-
- 
   
     useEffect(() => {
       const fetchWorkouts = async () => {
         try {
-          const response = await axios.get('http://localhost:9000/workouts'); // Adjust the API endpoint as needed
+          const response = await axios.get('/api/workouts'); // Adjust the API endpoint as needed
           setWorkouts(response.data);
           setLoading(false);
-          console.log('the data fetched:',response.data)
+          console.log('the data fetched:'response.data)
         } catch (error) {
           console.error('Error fetching workouts:', error);
         }
@@ -78,27 +74,6 @@ export const WorkoutProvider = ({ children }) => {
   
       fetchWorkouts();
     }, []);
-
-    useEffect(()=>{
-      console.log('the workouts array:',workouts.data)
-     
-    })
-
-    useEffect(() => {
-      // Check if workouts.data is initialized and not empty
-      if (workouts.data && workouts.data.length > 0) {
-        console.log('First workout:', workouts.data[0]);
-        // You can safely access workouts.data[0] here
-      }
-    }, [workouts.data]);
-
-  
-    // const firstWorkout = workouts.data[0]
-
-  
-
-    // console.log("the first workout",firstWorkout)
-   
   
     const handleDateChange = (date) => {
       setSelectedDate(date);
@@ -164,36 +139,14 @@ export const WorkoutProvider = ({ children }) => {
     };
   
     // Filter workouts based on the selected date or week
-
-
-    useEffect(() => {
-      if (workouts.data) {
-          const filtered = workouts.data.filter((workout) => {
-              if (dateSelected) {
-                  // Ensure workout.date is a Date object
-                  const workoutDate = new Date(workout.date);
-                  // Check if workoutDate is a valid Date object
-                  if (!isNaN(workoutDate.getTime())) {
-                      // Use toLocaleDateString() for comparison
-                      return workoutDate.toLocaleDateString() === selectedDate?.toLocaleDateString();
-                  } else {
-                      // Handle the case where workout.date is not a valid Date object
-                      return false;
-                  }
-              } else if (weekSelected) {
-                  return getWeekNumber(workout.date) === selectedWeek;
-              }
-              return false;
-          });
-          setFilteredWorkouts(filtered);
+    const filteredWorkouts = workouts.filter((workout) => {
+      if (dateSelected) {
+        return workout.date && workout.date.toDateString() === selectedDate?.toDateString();
+      } else if (weekSelected) {
+        return getWeekNumber(workout.date) === selectedWeek;
       }
-  }, [workouts.data, dateSelected, selectedDate, weekSelected, selectedWeek]);
-  
-
-  useEffect(()=> {
-    console.log('the filtered data is...',filteredWorkouts)
-  })
-    
+      return false;
+    });
 
 
     const calculateProgress = () => {
@@ -278,7 +231,7 @@ export const WorkoutProvider = ({ children }) => {
 
 
     const value = {
-      filteredWorkouts,
+        filteredWorkouts,
         handleWeekSelection,
         handleDateSelection,
         handleDateChange,

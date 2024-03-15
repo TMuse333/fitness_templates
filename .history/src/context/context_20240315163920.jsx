@@ -170,16 +170,7 @@ export const WorkoutProvider = ({ children }) => {
       if (workouts.data) {
           const filtered = workouts.data.filter((workout) => {
               if (dateSelected) {
-                  // Ensure workout.date is a Date object
-                  const workoutDate = new Date(workout.date);
-                  // Check if workoutDate is a valid Date object
-                  if (!isNaN(workoutDate.getTime())) {
-                      // Use toLocaleDateString() for comparison
-                      return workoutDate.toLocaleDateString() === selectedDate?.toLocaleDateString();
-                  } else {
-                      // Handle the case where workout.date is not a valid Date object
-                      return false;
-                  }
+                  return workout.date && workout.date.toLocaleDateString()() === selectedDate?.toLocaleDateString();
               } else if (weekSelected) {
                   return getWeekNumber(workout.date) === selectedWeek;
               }
@@ -188,7 +179,6 @@ export const WorkoutProvider = ({ children }) => {
           setFilteredWorkouts(filtered);
       }
   }, [workouts.data, dateSelected, selectedDate, weekSelected, selectedWeek]);
-  
 
   useEffect(()=> {
     console.log('the filtered data is...',filteredWorkouts)

@@ -26,8 +26,6 @@ export const WorkoutProvider = ({ children }) => {
     const [weeklyProgressSelected, setWeeklyProgressSelected] =
     useState(false)
 
-    const [filteredWorkouts, setFilteredWorkouts] = useState([]);
-
     const handleReturnClick = () => {
         setSelectedDate(null); // Reset selected date
         // setWorkouts([]); 
@@ -166,34 +164,14 @@ export const WorkoutProvider = ({ children }) => {
     // Filter workouts based on the selected date or week
 
 
-    useEffect(() => {
-      if (workouts.data) {
-          const filtered = workouts.data.filter((workout) => {
-              if (dateSelected) {
-                  // Ensure workout.date is a Date object
-                  const workoutDate = new Date(workout.date);
-                  // Check if workoutDate is a valid Date object
-                  if (!isNaN(workoutDate.getTime())) {
-                      // Use toLocaleDateString() for comparison
-                      return workoutDate.toLocaleDateString() === selectedDate?.toLocaleDateString();
-                  } else {
-                      // Handle the case where workout.date is not a valid Date object
-                      return false;
-                  }
-              } else if (weekSelected) {
-                  return getWeekNumber(workout.date) === selectedWeek;
-              }
-              return false;
-          });
-          setFilteredWorkouts(filtered);
-      }
-  }, [workouts.data, dateSelected, selectedDate, weekSelected, selectedWeek]);
-  
-
-  useEffect(()=> {
-    console.log('the filtered data is...',filteredWorkouts)
-  })
-    
+    // const filteredWorkouts = workouts.data.filter((workout) => {
+    //   if (dateSelected) {
+    //     return workout.date && workout.date.toDateString() === selectedDate?.toDateString();
+    //   } else if (weekSelected) {
+    //     return getWeekNumber(workout.date) === selectedWeek;
+    //   }
+    //   return false;
+    // });
 
 
     const calculateProgress = () => {
@@ -278,7 +256,7 @@ export const WorkoutProvider = ({ children }) => {
 
 
     const value = {
-      filteredWorkouts,
+        // filteredWorkouts,
         handleWeekSelection,
         handleDateSelection,
         handleDateChange,

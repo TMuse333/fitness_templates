@@ -100,7 +100,7 @@ setInsertData(true)
 
 
        <ExerciseDisplay
-       workoutData={filteredWorkouts}
+       workoutData={filteredWorkouts.data}
        />
         
         {/* <div className="workout-boxes">

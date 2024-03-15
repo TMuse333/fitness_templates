@@ -237,7 +237,7 @@ export const designAdvantages = [
       ]
 
 
-     export  const workoutData = [
+       const workoutData = [
         {
         date: new Date(2024, 2, 9),
 
