@@ -102,7 +102,6 @@ export const WorkoutProvider = ({ children }) => {
   
     const handleDateChange = (date) => {
       setSelectedDate(date);
-      
       if(weekSelected){
         handleWeekSelection()
         console.log('it worked')
@@ -119,10 +118,6 @@ export const WorkoutProvider = ({ children }) => {
       }
      
     };
-
-    useEffect(()=>{
-      console.log('the selected date is',selectedDate)
-    },[selectedDate])
 
     useEffect(() => {
       if (weekSelected && selectedDate !== null) {

@@ -201,21 +201,14 @@ export const WorkoutProvider = ({ children }) => {
 
 
   useEffect(() => {
-    if (workouts.data) {
-      workouts.data.forEach((workout, index) => {
-   
-        console.log(`Date: ${workout.date}`);
-     
-        workout.exercises.forEach((exercise, setIndex) => {
-          console.log(`the exercise name:`,exercise.name)
-          exercise.sets.forEach((set, index) => {
-              console.log(`set ${index + 1}`)
-              console.log(`${set.weight} for ${set.reps}`)
-          })
-        });
+    if (workouts.data && selectedDate) {
+      const filtered = workouts.data.filter((workout) => {
+        return workout.date.toDateString() === selectedDate.toDateString();
       });
+      setFilteredData(filtered);
     }
-  }, [workouts.data, dateSelected]);
+  }, [workouts.data, selectedDate]);
+  
   
     
 

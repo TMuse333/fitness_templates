@@ -121,8 +121,8 @@ export const WorkoutProvider = ({ children }) => {
     };
 
     useEffect(()=>{
-      console.log('the selected date is',selectedDate)
-    },[selectedDate])
+      console.log('the selected date is',sele)
+    })
 
     useEffect(() => {
       if (weekSelected && selectedDate !== null) {

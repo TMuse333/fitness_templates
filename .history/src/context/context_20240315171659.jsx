@@ -79,18 +79,18 @@ export const WorkoutProvider = ({ children }) => {
       fetchWorkouts();
     }, []);
 
-    // useEffect(()=>{
-    //   console.log('the workouts array:',workouts.data)
+    useEffect(()=>{
+      console.log('the workouts array:',workouts.data)
      
-    // })
+    })
 
-    // useEffect(() => {
-    //   // Check if workouts.data is initialized and not empty
-    //   if (workouts.data && workouts.data.length > 0) {
-    //     console.log('First workout:', workouts.data[0]);
-    //     // You can safely access workouts.data[0] here
-    //   }
-    // }, [workouts.data]);
+    useEffect(() => {
+      // Check if workouts.data is initialized and not empty
+      if (workouts.data && workouts.data.length > 0) {
+        console.log('First workout:', workouts.data[0]);
+        // You can safely access workouts.data[0] here
+      }
+    }, [workouts.data]);
 
   
     // const firstWorkout = workouts.data[0]
@@ -102,7 +102,6 @@ export const WorkoutProvider = ({ children }) => {
   
     const handleDateChange = (date) => {
       setSelectedDate(date);
-      
       if(weekSelected){
         handleWeekSelection()
         console.log('it worked')
@@ -119,10 +118,6 @@ export const WorkoutProvider = ({ children }) => {
       }
      
     };
-
-    useEffect(()=>{
-      console.log('the selected date is',selectedDate)
-    },[selectedDate])
 
     useEffect(() => {
       if (weekSelected && selectedDate !== null) {
@@ -202,16 +197,15 @@ export const WorkoutProvider = ({ children }) => {
 
   useEffect(() => {
     if (workouts.data) {
-      workouts.data.forEach((workout, index) => {
-   
-        console.log(`Date: ${workout.date}`);
-     
-        workout.exercises.forEach((exercise, setIndex) => {
-          console.log(`the exercise name:`,exercise.name)
-          exercise.sets.forEach((set, index) => {
-              console.log(`set ${index + 1}`)
-              console.log(`${set.weight} for ${set.reps}`)
-          })
+      workouts.data.forEach((exercise, index) => {
+        console.log(`Exercise ${index + 1}:`);
+        console.log(`Date: ${exercise.date}`);
+        console.log(`Exercises:`);
+        exercise.exercises.forEach((set, setIndex) => {
+          console.log(`the exercise name:`)
+          // console.log(`Set ${setIndex + 1}:`);
+          // console.log(`Weight: ${set.weight}`);
+          // console.log(`Reps: ${set.reps}`);
         });
       });
     }

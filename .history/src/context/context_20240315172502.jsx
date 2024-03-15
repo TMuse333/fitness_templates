@@ -102,7 +102,6 @@ export const WorkoutProvider = ({ children }) => {
   
     const handleDateChange = (date) => {
       setSelectedDate(date);
-      
       if(weekSelected){
         handleWeekSelection()
         console.log('it worked')
@@ -119,10 +118,6 @@ export const WorkoutProvider = ({ children }) => {
       }
      
     };
-
-    useEffect(()=>{
-      console.log('the selected date is',selectedDate)
-    },[selectedDate])
 
     useEffect(() => {
       if (weekSelected && selectedDate !== null) {
@@ -208,9 +203,8 @@ export const WorkoutProvider = ({ children }) => {
      
         workout.exercises.forEach((exercise, setIndex) => {
           console.log(`the exercise name:`,exercise.name)
-          exercise.sets.forEach((set, index) => {
+          workout.exercises.sets.forEach((set, index) => {
               console.log(`set ${index + 1}`)
-              console.log(`${set.weight} for ${set.reps}`)
           })
         });
       });
