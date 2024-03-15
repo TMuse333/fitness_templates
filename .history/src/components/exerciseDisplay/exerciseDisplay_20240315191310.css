@@ -13,13 +13,9 @@ text-align: center;
 
 }
 
-.exercise-display-list{
-    text-align: left;
+.exercise-data{
+    text-align: center;
 }
-
-/* .exercise-data p{
-    text-align: left;
-} */
 
 .exercise-display-list li{
     list-style: none;

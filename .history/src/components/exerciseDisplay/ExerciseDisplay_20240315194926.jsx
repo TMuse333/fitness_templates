@@ -83,12 +83,12 @@ const ExerciseDisplay = ({ workoutData }) => {
                   style={style(exerciseIndex,workoutIndex)}
                   onMouseEnter={() => handleMouseEnter(exerciseIndex,workoutIndex)}
                   onMouseLeave={handleMouseLeave}
-                  onClick={()=>handleItemClick(exerciseIndex,workoutIndex)}
+                  onClick={()=>}
                  
                 >
                   {exercise.name}
                 </li>
-                {clickedExercise.includes(exerciseIndex) && clickedWorkout.includes(workoutIndex)  &&  (
+                {expandedIndex === exerciseIndex  && (
                   <div className="exercise-set-details">
                     <strong>Sets:</strong>
                     <ul>

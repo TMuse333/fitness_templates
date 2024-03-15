@@ -14,12 +14,12 @@ text-align: center;
 }
 
 .exercise-display-list{
-    text-align: left;
+    te
 }
 
-/* .exercise-data p{
+.exercise-data p{
     text-align: left;
-} */
+}
 
 .exercise-display-list li{
     list-style: none;

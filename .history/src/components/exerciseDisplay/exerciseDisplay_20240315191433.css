@@ -17,9 +17,9 @@ text-align: center;
     text-align: left;
 }
 
-/* .exercise-data p{
+.exercise-data p{
     text-align: left;
-} */
+}
 
 .exercise-display-list li{
     list-style: none;

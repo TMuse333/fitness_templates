@@ -88,7 +88,7 @@ const ExerciseDisplay = ({ workoutData }) => {
                 >
                   {exercise.name}
                 </li>
-                {clickedExercise.includes(exerciseIndex) && clickedWorkout.includes(workoutIndex)  &&  (
+                {expandedIndex === exerciseIndex  && selected (
                   <div className="exercise-set-details">
                     <strong>Sets:</strong>
                     <ul>

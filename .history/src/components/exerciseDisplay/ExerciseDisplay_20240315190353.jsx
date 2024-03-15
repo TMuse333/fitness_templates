@@ -1,0 +1,59 @@
+import React,{useState} from "react";
+import { useWorkout } from "../../context/context";
+import './exerciseDisplay.css'
+
+const ExerciseDisplay = ({ workoutData }) => {
+
+
+const {weekSelected} = useWorkout()
+
+const [isHovered, setIsHovered] = useState(null)
+
+const style = (index) => {
+  const selected = index === isHovered;
+
+  return {
+    transform: selected ? 'scale(1.2)' : 'scale(1)',
+    backgroundColor: selected ? 'blue' : 'auto',
+  }
+}
+
+const handleMouseEnter = (index) => {
+  setIsHovered(index)
+}
+
+const handleMouseLeave = (index) => {
+  setIsHovered(null)
+}
+
+function formatDate(date) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(date).toLocaleDateString(undefined, options);
+}
+
+  return (
+    <div className="exercise-display-container">
+  
+  {workoutData.map((workout, index) => (
+  <div key={index} className="exercise-display-workout">
+    {weekSelected && <h2 className="exercise-display-date">Date: {formatDate(workout.date)}</h2>}
+    
+      <ul className="exercise-display-list">
+        <li><strong>Exercise</strong></li>
+        {workout.exercises.map((exercise,index) => (
+          <li style={style(index)}
+          onMouseEnter={()=>handleMouseEnter(index)}
+          onMouseLeave={()=>}
+          key={index}>{exercise.name}</li>
+        ))}
+        </ul>
+   
+  </div>
+))}
+
+
+    </div>
+  );
+};
+
+export default ExerciseDisplay;

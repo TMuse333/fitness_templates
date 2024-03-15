@@ -9,17 +9,9 @@ overflow-x: hidden;
 display: flex;
 flex-direction: column;
 justify-content: center;
-text-align: center;
+/* text-align: left; */
 
 }
-
-.exercise-display-list{
-    text-align: left;
-}
-
-/* .exercise-data p{
-    text-align: left;
-} */
 
 .exercise-display-list li{
     list-style: none;

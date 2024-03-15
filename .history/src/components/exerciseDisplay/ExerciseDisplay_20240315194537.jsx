@@ -6,31 +6,12 @@ const ExerciseDisplay = ({ workoutData }) => {
   const { weekSelected } = useWorkout();
 
   const [isHovered, setIsHovered] = useState(null);
-
+  const [expandedIndex, setExpandedIndex] = useState(null);
   const [hoveredWorkout, setHoveredWorkout] = useState(null)
 
   const [clickedWorkout, setClickedWorkout] = useState([])
 
-  const [clickedExercise, setClickedExercise] = useState([])
-
-  const handleItemClick = (exerciseIndex, workoutIndex) => {
-    const isAlreadyClicked = clickedExercise.includes(exerciseIndex);
-  
-    if (isAlreadyClicked) {
-      setClickedExercise(clickedExercise.filter((index) => index !== exerciseIndex));
-    } else {
-      setClickedExercise([...clickedExercise, exerciseIndex]);
-    }
-
-    const isAlreadyClicked2 = clickedWorkout.includes(workoutIndex);
-
-    if (isAlreadyClicked2) {
-      setClickedWorkout(clickedWorkout.filter((index) => index !== workoutIndex));
-    } else {
-      setClickedWorkout([...clickedWorkout, workoutIndex]);
-    }
-  };
-  
+  const 
 
   const style = (index, workoutIndex) => {
     const selected = index === isHovered
@@ -55,7 +36,7 @@ const ExerciseDisplay = ({ workoutData }) => {
 
 
 
-
+  
   
 
   function formatDate(date) {
@@ -83,12 +64,11 @@ const ExerciseDisplay = ({ workoutData }) => {
                   style={style(exerciseIndex,workoutIndex)}
                   onMouseEnter={() => handleMouseEnter(exerciseIndex,workoutIndex)}
                   onMouseLeave={handleMouseLeave}
-                  onClick={()=>handleItemClick(exerciseIndex,workoutIndex)}
-                 
+                  onClick={() => handleItemClick(exerciseIndex)}
                 >
                   {exercise.name}
                 </li>
-                {clickedExercise.includes(exerciseIndex) && clickedWorkout.includes(workoutIndex)  &&  (
+                {expandedIndex === exerciseIndex  && (
                   <div className="exercise-set-details">
                     <strong>Sets:</strong>
                     <ul>

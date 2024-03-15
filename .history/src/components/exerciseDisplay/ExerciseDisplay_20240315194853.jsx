@@ -22,9 +22,9 @@ const ExerciseDisplay = ({ workoutData }) => {
       setClickedExercise([...clickedExercise, exerciseIndex]);
     }
 
-    const isAlreadyClicked2 = clickedWorkout.includes(workoutIndex);
+    const isAlreadyClicked = clickedWorkout.includes(workoutIndex);
 
-    if (isAlreadyClicked2) {
+    if (isAlreadyClicked) {
       setClickedWorkout(clickedWorkout.filter((index) => index !== workoutIndex));
     } else {
       setClickedWorkout([...clickedWorkout, workoutIndex]);
@@ -83,12 +83,11 @@ const ExerciseDisplay = ({ workoutData }) => {
                   style={style(exerciseIndex,workoutIndex)}
                   onMouseEnter={() => handleMouseEnter(exerciseIndex,workoutIndex)}
                   onMouseLeave={handleMouseLeave}
-                  onClick={()=>handleItemClick(exerciseIndex,workoutIndex)}
                  
                 >
                   {exercise.name}
                 </li>
-                {clickedExercise.includes(exerciseIndex) && clickedWorkout.includes(workoutIndex)  &&  (
+                {expandedIndex === exerciseIndex  && (
                   <div className="exercise-set-details">
                     <strong>Sets:</strong>
                     <ul>

@@ -15,6 +15,7 @@ text-align: center;
 
 .exercise-display-list{
     text-align: left;
+    padding: 0;
 }
 
 /* .exercise-data p{
