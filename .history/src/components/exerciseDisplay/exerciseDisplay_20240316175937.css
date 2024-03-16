@@ -1,0 +1,47 @@
+.exercise-display-container{
+  
+    width:80vw;
+    background: radial-gradient(circle, #00bfff, #0077b3);
+
+text-align: center;
+
+position: relative;
+margin: 0 auto;
+}
+
+.exercise-display-list{
+    /* text-align: left; */
+   
+text-align: center;
+
+}
+
+/* .exercise-data p{
+    text-align: left;
+} */
+
+.exercise-display-list li{
+    list-style: none;
+    /* width:50vw; */
+    width:fit-content;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+
+}
+
+.exercise-set-details{
+    background-color: #0077b3;
+    /* position: absolute; */
+    left:0;
+    width:100%;
+}
+
+.exercise-set-details ul {
+text-align: left;
+margin-left: -2rem;
+left:0;
+position: relative;
+   
+
+}
+

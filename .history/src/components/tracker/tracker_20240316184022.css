@@ -1,0 +1,195 @@
+.workout-boxes{
+    margin: 0 auto;
+}
+
+.tracker-container{
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    /* background-color: black; */
+    overflow-x: hidden;
+    max-width: 1000px;
+    
+}
+
+.react-calendar button{
+    background-color: transparent;
+}
+
+.react-calendar{
+    
+    transform: scale(0.8);
+}
+
+.react-calendar__navigation{
+    background-color: red;
+    
+}
+
+.exercise-box{
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    width:80vw;
+}
+
+.exercise-date{
+margin: 1rem auto;
+}
+
+.tracker-button  {
+    font-size: 0.75rem;
+    margin: 0 0.5rem 1rem 0.5rem;
+    transition: all 0.3s ease-out;
+    align-items: center;
+    width:fit-content;
+    
+}
+
+.tracker-form{
+    /* margin-top: 15rem; */
+    /* margin-top: -5rem; */
+    /* position: relative; */
+    z-index: 50;
+}
+
+.tracker-button:hover{
+    transform: scale(1.2);
+}
+
+.exercise-sets{
+    margin-bottom: 1rem;
+}
+
+.tracker-form{
+    overflow: scroll;
+}
+
+
+.date-picker{
+    font-size: 1rem;
+    padding:0.5rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+    position: relative;
+    z-index: 2;
+    overflow: scroll;
+}
+
+.react-datepicker-popper{
+    overflow: scroll;
+}
+
+
+
+.tracker-form{
+    margin-bottom: 2rem;
+}
+
+.workout-progress{
+   border:2px solid white;
+   margin-bottom: 2rem;
+   padding-bottom: 2rem;
+   width:80vw;
+   margin-left:auto;
+   margin-right: auto;
+   /* max-width: 200px; */
+}
+
+.progress-nav{
+    display: flex;
+    align-items: center;
+
+justify-content: center;
+width:90vw;
+margin: 0 auto;
+}
+
+.progress-button{
+    font-size: 1rem;
+    color:white;
+    background-color: transparent;
+}
+.tracker-insert-button{
+    background-color: transparent;
+}
+
+
+
+@media screen and (min-width:655px){
+
+    .weekly-progress-container{
+        width: 100vw;
+        margin: 0 auto;
+        position: absolute;
+        left:50%;
+        top:100%;
+        transform: translateX(-50%);
+        
+
+    }
+
+    .tracker-button{
+        font-size: 1rem;
+    }
+    .tracker-progress-boxes{
+        display: flex;
+        flex-direction: column;
+       /* grid-template-columns: repeat(auto-fill,minmax(33%,1fr)); */
+        margin: 0 auto;
+        width:100vw;
+        justify-content: center;
+        align-items: center;
+        /* background-color: rgb(39, 30, 30); */
+  
+    }
+
+    .workout-progress-boxes{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(33%,1fr));
+        width:100vw;
+        max-width: 1500px;
+        justify-content: center;
+        align-items: center;
+        /* margin:0 auto;
+        background-color: black; */
+        background: radial-gradient(circle, #00bfff, #0077b3);
+
+    }
+
+    .workout-progress{
+        width:30vw;
+        max-width: 460px;
+    }
+
+    .exercise-box{
+        width:25vw;
+        max-width: 390px;
+        margin: 0 auto 2rem auto;
+        height:25vw;
+        max-height: 250px;
+    }
+
+    .exercise-boxes{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(33%,1fr));
+        width:100vw;
+        /* background-color: rgb(40, 20, 20); */
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .progress-nav{
+        margin:0 auto;
+        max-width: 500px;
+    }
+}
+
+
+
