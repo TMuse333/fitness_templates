@@ -23,7 +23,6 @@ text-align: center; */
     margin: 0 auto;
     position: relative;
     height:20vh;
- 
 
 }
 
@@ -39,12 +38,7 @@ text-align: center; */
     
 }
 
-.exercise-display-list2 li{
-    list-style: none;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-}
+.
 
 
 

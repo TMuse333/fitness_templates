@@ -75,7 +75,7 @@ const ExerciseDisplay = ({ workoutData }) => {
   }
 
   const displayListStyle = (length) => {
-    const heightPerIndex = 75
+    const heightPerIndex = 50
     const totalHeight = length * heightPerIndex
 
     

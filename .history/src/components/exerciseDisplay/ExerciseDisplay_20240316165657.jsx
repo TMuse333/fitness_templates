@@ -75,7 +75,7 @@ const ExerciseDisplay = ({ workoutData }) => {
   }
 
   const displayListStyle = (length) => {
-    const heightPerIndex = 75
+    const heightPerIndex = 50
     const totalHeight = length * heightPerIndex
 
     
@@ -85,7 +85,7 @@ const ExerciseDisplay = ({ workoutData }) => {
   }
 
   const displayLiStyle = (index) => {
-    const margin = 25;
+    const margin = 30;
     const top = margin * index;
 
     return {

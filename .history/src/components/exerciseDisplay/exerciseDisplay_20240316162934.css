@@ -1,0 +1,71 @@
+.exercise-display-container{
+    margin: 0 auto;
+    width:80vw;
+    background: radial-gradient(circle, #00bfff, #0077b3);
+/* padding: 1rem 0;
+margin-bottom: 2rem; */
+border-radius: 1rem;
+overflow-x: hidden;
+/* display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center; */
+
+}
+
+.exercise-display-list{
+    /* text-align: left;
+    width:fit-content; */
+}
+
+/* .exercise-data p{
+    text-align: left;
+} */
+
+.exercise-display-list li{
+    list-style: none;
+    text-align: center;
+    /* width:50vw; */
+    /* width:fit-content; */
+    /* padding: 0.25rem 1rem;
+    border-radius: 1rem; */
+
+}
+
+.exercise-set-details{
+    background-color: #0077b3;
+    text-align: center;
+    /* width:50vw; */
+    /* margin:0 auto; */
+}
+
+.exercise-set-details  {
+ margin: 0 auto;
+margin-top: 1rem;
+    padding:0;
+
+    width:80vw;
+    text-align: center;
+    
+
+}
+
+.set-reps-weight{
+    /* color:red; */
+    width:fit-content;
+}
+
+.exercise-sets-details li{
+    width:fit-content;
+    color:red;
+}
+
+.exercise-set-details strong{
+    /* margin-left:1rem; */
+}
+
+
+
+
+
+

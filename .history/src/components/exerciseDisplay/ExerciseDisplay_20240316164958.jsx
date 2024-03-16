@@ -80,19 +80,9 @@ const ExerciseDisplay = ({ workoutData }) => {
 
     
     return {
-      height:totalHeight
+      height:
     }
   }
-
-  const displayLiStyle = (index) => {
-    const margin = 25;
-    const top = margin * index;
-
-    return {
-        top: index === 0 ? `${10}%` : `${top}%` // Set top to 30px for the first element, then 30px more for subsequent elements
-    };
-};
-
 
   return (
     <div className="exercise-display-container">
@@ -103,15 +93,12 @@ const ExerciseDisplay = ({ workoutData }) => {
               Date: {formatDate(workout.date)}
             </h2>
           )}
-        <ul className="exercise-display-list2"
-        style={
-          displayListStyle(workout.exercises.length)
-        }>
+        <ul className="exercise-display-list2">
           <strong>
             Exercise
           </strong>
           {workout.exercises.map((exercise,index) => (
-            <li style={displayLiStyle(index)}>
+            <li>
               {exercise.name}
             </li>
           ))}

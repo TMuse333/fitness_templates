@@ -1,0 +1,26 @@
+.exercise-display-container{
+    margin: 0 auto;
+    width:80vw;
+    background: radial-gradient(circle, #00bfff, #0077b3);
+/* padding: 1rem 0;
+margin-bottom: 2rem; */
+border-radius: 1rem;
+overflow-x: hidden;
+/* display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center; */
+
+}
+
+.exercise-display-list {
+    text-align: center;
+}
+
+
+
+
+
+
+
+

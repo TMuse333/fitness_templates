@@ -21,29 +21,14 @@ text-align: center; */
     justify-content: center;
     /* text-align: left; */
     margin: 0 auto;
-    position: relative;
-    height:20vh;
- 
 
 }
 
 .exercise-display-list2 strong{
     /* background-color: aliceblue; */
     padding:0;
-  
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    top:5%;
+    display: inline-block;
     
-    
-}
-
-.exercise-display-list2 li{
-    list-style: none;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
 }
 
 

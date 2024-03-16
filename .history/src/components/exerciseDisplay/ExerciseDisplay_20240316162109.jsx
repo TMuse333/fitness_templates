@@ -64,7 +64,7 @@ const ExerciseDisplay = ({ workoutData }) => {
   }
 
   const exerciseStyle = (sets) => {
-    // const selected = clickedExercise.includes(index)
+    const selected = clickedExercise.includes(index)
 
     const heightPerSet = 50
     const totalHeight = heightPerSet * sets
@@ -73,26 +73,6 @@ const ExerciseDisplay = ({ workoutData }) => {
       height: totalHeight
     }
   }
-
-  const displayListStyle = (length) => {
-    const heightPerIndex = 75
-    const totalHeight = length * heightPerIndex
-
-    
-    return {
-      height:totalHeight
-    }
-  }
-
-  const displayLiStyle = (index) => {
-    const margin = 25;
-    const top = margin * index;
-
-    return {
-        top: index === 0 ? `${10}%` : `${top}%` // Set top to 30px for the first element, then 30px more for subsequent elements
-    };
-};
-
 
   return (
     <div className="exercise-display-container">
@@ -103,19 +83,40 @@ const ExerciseDisplay = ({ workoutData }) => {
               Date: {formatDate(workout.date)}
             </h2>
           )}
-        <ul className="exercise-display-list2"
-        style={
-          displayListStyle(workout.exercises.length)
-        }>
-          <strong>
-            Exercise
-          </strong>
-          {workout.exercises.map((exercise,index) => (
-            <li style={displayLiStyle(index)}>
-              {exercise.name}
+          <ul className="exercise-display-list"
+          >
+            <li>
+              <strong>Exercise</strong>
             </li>
-          ))}
-        </ul>
+            {workout.exercises.map((exercise, exerciseIndex) => (
+              <React.Fragment key={exerciseIndex}>
+                <li
+                  className="exercise-data"
+                  style={style(exerciseIndex,workoutIndex)}
+                  onMouseEnter={() => handleMouseEnter(exerciseIndex,workoutIndex)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={()=>handleItemClick(exerciseIndex,workoutIndex)}
+                 
+                >
+                  {exercise.name}
+                </li>
+                
+                  <div className="exercise-set-details">
+                   
+                    <ul style={exerciseStyle(exercise.sets.length)}
+                    >
+                    <strong>Sets:</strong>
+                      {exercise.sets.map((set, setIndex) => (
+                        <li key={setIndex}>
+                          Weight: {set.weight}, Reps: {set.reps}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                
+              </React.Fragment>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
