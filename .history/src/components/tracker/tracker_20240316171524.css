@@ -10,11 +10,9 @@
     position: absolute;
     top:20%;
     left:50%;
-    transform: translateX(-50%);
     /* background-color: black; */
-    overflow-x: hidden;
-    max-width: 1000px;
     
+    max-width: 1000px;
 }
 
 .exercise-box{

@@ -41,7 +41,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    position: absolute;
+    left:50%;
+    background-color: red;
    
 
 }
@@ -52,9 +54,7 @@
   overflow-x: hidden;
   position: absolute;
   top:20%;
-left:50%;
-transform: translateX(-50%);
-background-color: #00bfff;
+left:0;
 }
 
 .tracker-options-container button:first-child{

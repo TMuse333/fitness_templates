@@ -10,7 +10,7 @@
     position: absolute;
     top:20%;
     left:50%;
-    transform: translateX(-50%);
+    transform: translateX(-0%);
     /* background-color: black; */
     overflow-x: hidden;
     max-width: 1000px;

@@ -53,8 +53,6 @@
   position: absolute;
   top:20%;
 left:50%;
-transform: translateX(-50%);
-background-color: #00bfff;
 }
 
 .tracker-options-container button:first-child{

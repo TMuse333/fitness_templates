@@ -90,15 +90,16 @@ const ExerciseDisplay = ({ workoutData }) => {
                 </li>
              
                   <div className="exercise-set-details">
-                  
-                    <ul >
+                    <strong>Sets:</strong>
+                    <ul>
                       {exercise.sets.map((set, setIndex) => (
-                        <li
-                        key={setIndex}>set {setIndex+1} {set.weight}lbs </li>
+                        <li key={setIndex}>
+                          Weight: {set.weight}, Reps: {set.reps}
+                        </li>
                       ))}
                     </ul>
                   </div>
-            
+                )}
               </React.Fragment>
             ))}
           </ul>

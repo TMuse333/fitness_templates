@@ -36,7 +36,8 @@
 
 .progress-container {
 width:100vw;
-
+display: flex;
+position: relative;
 }
 
 .program-video{

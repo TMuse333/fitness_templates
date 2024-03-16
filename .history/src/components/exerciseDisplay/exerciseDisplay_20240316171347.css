@@ -12,7 +12,9 @@ transform: translateX(-50%);
 .exercise-display-list{
     /* text-align: left; */
    
-
+    width:80vw;
+    position: relative;
+    z-index: 200;
 
 }
 

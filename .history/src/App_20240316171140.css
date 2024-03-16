@@ -35,8 +35,13 @@
 }
 
 .progress-container {
-width:100vw;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
 
+  /* Set height to 100% of the viewport height */
+  width:100vw;
 }
 
 .program-video{

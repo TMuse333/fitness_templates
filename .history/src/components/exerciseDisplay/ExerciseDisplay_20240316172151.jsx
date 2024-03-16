@@ -94,7 +94,7 @@ const ExerciseDisplay = ({ workoutData }) => {
                     <ul >
                       {exercise.sets.map((set, setIndex) => (
                         <li
-                        key={setIndex}>set {setIndex+1} {set.weight}lbs </li>
+                        key={set}>set {setIndex+1} {set.weight}lbs </li>
                       ))}
                     </ul>
                   </div>
